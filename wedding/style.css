@@ -1,0 +1,360 @@
+@font-face {
+  font-family: 'brawls';
+  src: url('/wedding/fonts/brawls.eot'); 
+  src: url('/wedding/fonts/brawls.eot?#iefix') format('embedded-opentype'), 
+       url('/wedding/fonts/brawls.woff2') format('woff2'), 
+       url('/wedding/fonts/brawls.woff') format('woff'),
+       url('/wedding/fonts/brawls.ttf')  format('truetype'),
+       url('/wedding/fonts/brawls.svg#svgFontName') format('svg');
+}
+body {
+	font-family: 'brawls', sans-serif;
+	text-align: center;
+	margin: 0 auto;
+	padding: 0;
+	background: repeating-linear-gradient(to right, #f6ba52, #f6ba52 10px, #ffd180 10px, #ffd180 20px);
+}
+iframe #googlemap {
+	display: block;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+#alpha {
+  	padding-bottom: 30px;
+  	border-bottom: 5px solid #19164a;
+  	border-top: 5px solid #19164a;
+  	color: #fff;
+	background: repeating-linear-gradient(to right, #19164a, #19164a 10px, #282466 10px, #282466 20px);
+}
+#beta {
+	position: relative;
+}
+#omega {
+  	display: inline-block;
+  	background-color: #19164a;
+  	width: 100%;
+}
+#gamma {
+	position: relative;
+  	border-bottom: 15px solid #19164a;
+  	border-top: 5px solid #19164a;
+}
+.blue {
+	background-color: #19164a;
+}
+.orange {
+	background-color: #FFA100;
+}
+h1 {
+	font-size: 80px;
+	line-height: 80px;
+	padding: 0;
+	margin: 0;
+}
+h2 {
+	font-size: 30px;
+	line-height: 30px;
+	margin: 0;
+	padding: 0;
+}
+h3 {
+	font-size: 20px;
+	line-height: 20px;
+	margin: 0;
+	padding: 0;
+}
+h4 {
+	font-size: 18px;
+	line-height: 18px;
+	padding: 0;
+	margin: 0;
+}
+h5 {
+	font-size: 40px;
+	padding: 0;
+	margin: 0;
+}
+ul {
+	margin: 10px 0 20px 0;
+}
+p, li {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 21px;
+}
+p span, li span {
+	font-size: 11px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+p a, li a {
+	border-bottom: 1px dotted #000;
+}
+p a:hover, li a:hover {
+	border-bottom: 0;
+}
+.column-image {
+	width: 33%;
+}
+.column-image img {
+	width: 100%;
+}
+.column-text {
+	width: 67%;
+	background-color: #FFA100;
+	padding-bottom: 20px;
+}
+#alpha h1 {
+	margin-top: 30px;
+	margin-bottom: 10px;
+	letter-spacing: 2px;
+    animation: fadein 2s;
+    -webkit-animation: fadein 2s; 
+}
+#alpha a {
+	color: #fff;
+}
+#alpha h2 {
+	letter-spacing: 1px;
+    animation: fadein 2s;
+    -webkit-animation: fadein 2s; 
+}
+#alpha img.rope-left {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+#beta .hero {
+	margin: 0;
+}
+#beta .hero img#zuki {
+	width: 100%;
+}
+#beta .hero img#logo {
+	width: 100%;
+	max-width: 1100px;
+    animation: fadein 2s;
+    -webkit-animation: fadein 2s; 
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+#beta .hero div#zuki-arrow {
+	margin-left: 200px;
+	margin-top: 290px;
+}
+#beta .hero figcaption {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+}
+#omega h2 {
+	margin-top: 25px;
+	font-size: 95px;
+	line-height: 95px;
+	text-align: left;
+	padding-left: 30px;
+}
+#omega h3 {
+	font-size: 30px;
+	line-height: 30px;
+	text-align: left;
+	margin-top: 20px;
+	padding-left: 20px;
+	padding-right: 10px;
+}
+#omega h4 {
+	text-align: left;
+	margin-top: 10px;
+	padding-left: 20px;
+	padding-right: 10px;
+	margin-bottom: 0;
+}
+#omega p {
+	text-align: left;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+#omega li {
+	text-align: left;
+	margin-bottom: 5px;
+	padding-right: 20px;
+}
+#omega a h5 {
+	display:inline-block;
+	text-shadow: 0 0 #19164a, 0 0 #19164a, 0 1px #19164a, 0 0 #19164a;
+}
+#omega figure.item {
+	width: 25%;
+	float: left;
+	color: #fff;
+	font-size: 40px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+#omega figure.item figcaption {
+	line-height: 320px;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+#omega figure.item img {
+	width: 100%;
+}
+#omega figure.item:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0, 0.5);
+	-moz-transition: background .3s linear;
+	-webkit-transition: background .3s linear;
+	-o-transition: background .3s linear;
+	transition: background .3s linear;
+}
+#omega figure.item:hover:before {
+	background: none;
+	-moz-transition: background .3s linear;
+	-webkit-transition: background .3s linear;
+	-o-transition: background .3s linear;
+	transition: background .3s linear;
+}
+#omega figure.item figcaption {
+	-moz-transition: transform 0.3s, color 0.3s;
+	-webkit-transition: transform 0.3s, color 0.3s;
+	-o-transition: transform 0.3s, color 0.3s;
+	transition: transform 0.3s, color 0.3s;
+}
+#omega figure.item:hover figcaption {
+	transform: translate3d(0,-5%,0) translate3d(0,-5px,0);
+	-moz-transition: transform 0.3s, color 0.3s;
+	-webkit-transition: transform 0.3s, color 0.3s;
+	-o-transition: transform 0.3s, color 0.3s;
+	transition: transform 0.3s, color 0.3s;
+}
+#gamma #anchor {
+	margin-top: 20px;
+}
+#gamma #anchor img {
+	width: 60%;
+	max-width: 320px;
+	transform-origin: center top;
+}
+#gamma #anchor img:hover {
+	animation: shake 3.2s infinite both;
+	transform: translate3d(0, 0, 0);
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+	transform: rotate(5deg);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+	transform: rotate(-5deg);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-2px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+	transform: rotate(-5deg);
+  }
+}
+@media only screen and (max-device-width : 1500px), only screen and (max-width : 1500px) {
+	#beta .hero div#zuki-arrow {
+		margin-top: 100px;
+	}
+}
+@media only screen and (max-device-width : 1200px), only screen and (max-width : 1200px) {
+	#beta .hero div#zuki-arrow {
+		margin-top: auto;
+		margin-bottom: 100px;
+	}
+}
+@media only screen and (max-device-width : 1000px), only screen and (max-width : 1000px) {
+	h1 {
+		font-size: 65px;
+		line-height: 65px;
+	}
+	h2 {
+		font-size: 30px;
+		line-height: 30px;
+	}
+	h5 {
+		font-size: 30px;
+	}	
+	#alpha #seo-value img {
+    	width: 150px;
+		height: 55px;
+	}
+	#beta .hero div#zuki-arrow {
+		margin-top: auto;
+		margin-bottom: 100px;
+	}
+}
+@media only screen and (max-device-width : 670px), only screen and (max-width : 670px) {
+	.breakpoint {
+		clear: both;
+	}
+	h1 {
+		font-size: 40px;
+		line-height: 40px;
+	}
+	h2 {
+		font-size: 20px;
+		line-height: 20px;
+	}
+	h5 {
+		font-size: 26px;
+	}
+	#alpha #seo-value {
+		display: none;
+	}
+	#alpha {
+		padding-bottom: 10px;
+	}
+	#alpha h1 {
+		margin-top: 10px;
+	}
+	#omega figure.item {
+    	width: 50%;
+	}
+	#omega h2 {
+	    font-size: 40px;
+	    line-height: 40px;
+	}
+	#omega h3 {
+	    font-size: 25px;
+	    line-height: 25px;
+	}
+	#beta .hero div#zuki-arrow {
+		margin-left: 100px;
+    }
+	#beta .hero div#zuki-arrow img {
+    	width: 100px;
+		height: 37px;
+    }
+	.column-image {
+    	width: 100%;
+	}
+	.column-text {
+    	width: 100%;
+	}
+}
+

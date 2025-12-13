@@ -1,0 +1,248 @@
+	P {
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+	
+	body {
+		scrollbar-3d-light-color: #00FF00;
+		scrollbar-arrow-color: #6699CC;
+		scrollbar-base-color: #00FF00;
+		scrollbar-dark-shadow-color: #00FF00;
+		scrollbar-face-color: #333333;
+		scrollbar-highlight-color: Gray;
+		scrollbar-shadow-color: Green;
+	}
+
+	.navtext {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		font-weight: bold;
+		color: #00FF00;
+		background-color: transparent;
+	}
+	.navtextsmall {
+		font-size: 9px;
+		font-weight: normal
+	}
+	.blogtext A {
+		font-weight: bold;
+		color: #6699CC;
+		background-color: transparent;
+	}
+	.blogtext {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		color: #CCCCCC;
+		background-color: #333333;
+	}
+	.blogtextbig {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 14px;
+		font-weight: bold;
+		text-align: right;
+		color: #660000;
+		background-color: #666666;
+		border-top: thin ridge gray;
+		border-left: thin ridge gray;
+		border-right: thin ridge gray;
+
+	}
+	.blogheader {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 14px;
+		font-weight: bold;
+		color: #333333;
+		background-color: #666666;
+		letter-spacing : 3px;
+		line-height: 20px;
+		border-top: thin ridge gray;
+	}
+	.extra {
+		border-left: thin ridge gray;
+		border-right: thin ridge gray;
+	}
+	A {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		color: #00FF00;
+		text-decoration : none;
+		background-color: transparent;
+		cursor: crosshair; 
+	}
+	A:hover {
+		color: #00FF00;
+		background-color: transparent;
+		text-decoration : overline underline;
+		cursor: crosshair; 
+	}
+	.searchbox {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		font-weight: bold;
+		color: #333333;
+		background-color: #CCCCCC;
+	}
+	.searchbutton {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		font-weight: bold;
+		color: #00FF00;
+		background-color: gray;
+		border: 2px solid #6699CC;
+	}
+
+	.backgroundright {
+		background-color: #330000;
+		color: #CCCCCC;
+		background-image :url(/images/background-right.gif);
+		border-top: 3px dotted #00FF00;
+	}
+	.backgroundleft {
+		background-image :url(/images/background-left.gif);
+		border-left: 3px dotted #00FF00;
+		border-top: 3px dotted #00FF00;
+	}
+	.PullDownForm {
+		background-color: #333333;
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		font-weight: bold;
+		color: #00FF00;
+	}
+	.picborder {
+		border : 3px dotted Lime;
+	}
+
+
+
+/*calendar*/
+	
+	.dateofweek {  
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 9px; 
+		font-weight: 900; 
+		text-transform: lowercase; 
+		background-color: #333333;
+		color: #CCCCCC;
+	}
+	.calendarmodules  { 
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 9px; 
+		font-weight: normal; 
+		background-color: #333333;
+		color: #CCCCCC;
+	}
+
+
+/*slides*/
+
+	.slidecaption {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		font-weight: bold;
+		color: #00FF00;
+		background-color: gray;
+		border: 2px solid #6699CC;
+		text-align: center;
+		line-height: 30px;
+	}
+
+	.slidemenu  {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		font-weight: bold;
+		color: #00FF00;
+		text-align: center;
+		line-height: 30px;
+		padding: 5px;
+		background-color: gray;
+		border: 2px solid #6699CC;
+		text-decoration: none;
+	}
+
+	.slidemenu:hover  {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		font-weight: bold;
+		color: #00FF00;
+		text-align: center;
+		line-height: 30px;
+		padding: 5px;
+		background-color: gray;
+		border: 2px solid #6699CC;
+		text-decoration: none;
+	}
+
+	.slidemenuselected  {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		font-weight: bold;
+		color: #00FF00;
+		text-align: center;
+		line-height: 30px;
+		padding: 5px;
+		background-color: #660000;
+		border: 2px solid #6699CC;
+		text-decoration: none;
+	}
+
+	.slidemenuselected:hover  {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		font-weight: bold;
+		color: #00FF00;
+		text-align: center;
+		line-height: 30px;
+		padding: 5px;
+		background-color: #660000;
+		border: 2px solid #6699CC;
+		text-decoration: none;
+	}
+	
+/*resume*/
+
+	.resume {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		color: #CCCCCC;
+		background-color: transparent;
+		}
+	h1 {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 18px;
+		font-weight: bold;
+		text-align: center;
+		}
+	h2 {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 16px;
+		font-weight: bold;
+		}
+	h2.resumerheaders {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 16px;
+		font-weight: bold;
+		background-color: #666666;
+		color: #CCCCCC;
+		border-top: thin ridge gray;
+		border-left: thin ridge gray;
+		border-right: thin ridge gray;
+		border-bottom: thin ridge gray;
+		}
+	h3 {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 13px;
+		font-weight: bold;
+		}
+	.resumenavtext {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		color: #00FF00;
+		line-height: 15px;
+		background-color: transparent;
+		padding-left: 5px;
+	}
+
+	
+	
+

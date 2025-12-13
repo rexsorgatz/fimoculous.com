@@ -1,0 +1,165 @@
+	P {
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+	.navtext {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		font-weight: bold;
+		color: #00FF00;
+	}
+	.navtextsmall {
+		font-size: 10px;
+		font-weight: normal;
+	}
+	.blogtext A {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		color: #6699CC;
+	}
+	.blogtext {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		color: #CCCCCC;
+	}
+	.blogtextbig {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 14px;
+		font-weight: bold;
+		text-align: right;
+		color: #660000;
+		background-color: #666666;
+	}
+	.blogheader {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 14px;
+		font-weight: bold;
+		color: #333333;
+		background-color: #666666;
+	}
+	A {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		color: #00FF00;
+	}
+	.searchbox {
+		font-family: arial,helvetica;
+		font-size: 12px;
+		font-weight: bold;
+		color: #660000;
+		background-color: #CCCCCC;
+	}
+	.searchbutton {
+		font-family: arial,helvetica;
+		font-size: 12px;
+		font-weight: bold;
+		color: #00FF00;
+		background-color: gray;
+	}
+	.backgroundright {
+		background-color: #330000;
+	}
+	.backgroundleft {
+		background-color: #333333;
+	}
+	.PullDownForm {
+	background-color: #333333;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #00FF00;
+	}
+	.picborder {
+	}
+	
+
+/*calendar*/
+	
+	.dateofweek {  
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 9px; 
+		font-weight: 900; 
+		text-transform: lowercase; 
+		background-color: #333333;
+		color: #CCCCCC;
+	}
+	.calendarmodules  { 
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 9px; 
+		font-weight: normal; 
+		background-color: #333333;
+		color: #CCCCCC;
+	}
+
+
+
+/*slides*/
+	
+	.slidecaption {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		font-weight: bold;
+		color: #00FF00;
+		background-color: gray;
+		text-align: center;
+		line-height: 30px;
+	}
+	
+	.slidemenu  {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		font-weight: bold;
+		color: #00FF00;
+		line-height: 30px;
+		text-decoration: none;
+	}
+	
+	.slidemenuselected  {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		font-weight: bold;
+		color: Maroon;
+		line-height: 30px;
+		text-decoration: none;
+	}
+	
+/*resume*/
+
+	.resume {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		color: #CCCCCC;
+		}
+	h1 {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 18px;
+		font-weight: bold;
+		text-align: center;
+		}
+	h2 {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 16px;
+		font-weight: bold;
+		}
+	h2.resumerheaders {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 16px;
+		font-weight: bold;
+		background-color: #666666;
+		color: #CCCCCC;
+		border: 1px gray solid;
+		}
+	h3 {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 13px;
+		font-weight: bold;
+		}
+	.resumenavtext {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		color: #00FF00;
+		padding-left: 5px;
+	}
+
+	
+	

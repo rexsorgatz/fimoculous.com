@@ -1,0 +1,59 @@
+// Colors
+// Color calculator - http://razorjam.github.io/sasscolourfunctioncalculator/
+// Color names - http://name-of-color.com/
+
+$gray: #999;
+$black: #000;
+$white: #fff;
+$light-blue: #39f;
+$red: #eb0028;
+
+$base-font-sans-serif: 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+$base-font-serif: 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif;
+
+// Body
+$base-text-color: $white !default;
+$secondary-text-color: $red !default;
+
+$base-background-color: $black !default;
+$secondary-background-color: $red !default;
+
+$base-font-size: 19px !default;
+$base-line-height: 1.2 !default;
+$base-font-family: $base-font-sans-serif !default;
+
+$main-border-color: $white !default;
+
+
+$vertical-rhythm: ($base-line-height * 1em);
+
+$base-min-width: 320px;
+
+// Liks
+$base-link-color: $red;
+
+// Buttons 
+$btn-color: $white !default;
+$btn-background: none !default;
+$btn-padding: 0 10px !default;
+$btn-font-size: inherit !default;
+
+// Forms
+$form-element-padding: $btn-padding !default;
+$form-element-border-color: $white !default;
+$form-element-focus-border-color: $red !default;
+$placeholder-color: $white !default;
+
+// Headers
+$h1-font-size: 48px !default;
+$h2-font-size: 20px !default;
+$h3-font-size: 24px !default;
+$h4-font-size: 21px !default;
+$h5-font-size: 17px !default;
+$h6-font-size: 15px !default;
+
+$headings-font-family: inherit !default;
+$headings-color: inherit !default;
+
+
+$animation-speed: 0.3s;

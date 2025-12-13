@@ -1,0 +1,31 @@
+body {
+font-family: verdana;
+font-size: 12px;
+background-color: #7D8A96;
+}
+td {
+font-family: verdana;
+font-size: 12px;
+}
+.cmstable {
+font-family: verdana;
+font-size: 12px;
+background-color: #BBCCDD;
+border: 1px solid black;
+}
+.cmsheader {
+font-family: verdana;
+font-size: 12px;
+font-weight: bold;
+background-color: #CCCCCC;
+border: 1px solid black;
+margin-bottom: 8px;
+}
+input {
+font-family: verdana;
+font-size: 12px;
+}
+textarea {
+font-family: verdana;
+font-size: 11px;
+}

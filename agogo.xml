@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:cc="http://web.resource.org/cc/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<channel>
+		<atom:link href="http://blog.agogo.com" rel="self" type="application/rss+xml"/>
+		<title>Top Lists of 2013</title>
+		<pubDate>Wed, 12 Dec 2013 08:00:00 +0000</pubDate>
+		<lastBuildDate>Wed, 12 Dec 2013 08:02:17 +0000</lastBuildDate>
+		<link>http://blog.agogo.com</link>
+		<language>en</language>
+		<copyright><![CDATA[2013 AGOGO Amalgamated]]></copyright>
+		<docs>http://blog.agogo.com/</docs>
+		<managingEditor>rex@agogo.com (rex@agogo.com)</managingEditor>
+		<description><![CDATA[Channel Your World.]]></description>
+		<image>
+			<url>http://www.agogo.com/apple-touch-icon-114x114-precomposed.png</url>
+			<title>AGOGO</title>
+			<link><![CDATA[http://www.agogo.com]]></link>
+		</image>
+		<itunes:author>AGOGO Amalgamated</itunes:author>
+		<itunes:category text="News"/>
+		<itunes:category text="Entertainment"/>
+		<itunes:image href="http://www.agogo.com/apple-touch-icon-114x114-precomposed.png" />
+		<itunes:explicit>no</itunes:explicit>
+		<itunes:owner>
+			<itunes:name><![CDATA[AGOGO]]></itunes:name>
+			<itunes:email>rex@agogo.com</itunes:email>
+		</itunes:owner>
+		<itunes:summary><![CDATA[]]></itunes:summary>
+		<itunes:subtitle><![CDATA[]]></itunes:subtitle>
+		<item>
+			<title>NPR Music's 50 Favorite Albums of 2013</title>
+			<pubDate>Wed, 11 Dec 2013 08:00:00 +0000</pubDate>
+			<guid isPermaLink="false"><![CDATA[]]></guid>
+			<link><![CDATA[]]></link>
+			<media:thumbnail url="http://www.agogo.com/apple-touch-icon-114x114-precomposed.png" />
+			<description><![CDATA[<p>NPR just unveiled their list of the Top 50 albums of 2013, and it's incredible. You can listen to the audio from all the artists right here on AGOGO, if you have connected your Rdio or Spotify account. Just tap on the Discover bulb at the top of this screen to gain access to all the good stuff. You can also find a link to the full list on our site at blog.agogo.com."</p>]]></description>
+			<itunes:keywords>Bill Callahan, Blood Orange, Bombino, Brandy Clark, The Bryan Ferry Orchestra, Buika, Caleb Burhans, Chance The Rapper, Daniel Avery, Darcy James Argue's Secret Society, Bryce Dessner, Nico Muhly, Shara Worden, Dawn of Midi, Dawn Upshaw, Maria Schneider, Deafheaven, DJ Koze, The Flaming Lips, Gregory Porter, Haim, In Solitude, Isabelle Faust, Swedish Radio Symphony Orchestra, James Blake, Jason Isbell, John Legend,  John Luther Adams, Juana Molina, Ka, Kacey Musgraves, Kanye West, La Santa Cecilia, La Vida Boheme, Latvian Radio Choir, Sigvards Klava, Laura Marling, Laura Mvula, Livity Sound, Lucius, Mala Rodriguez, The Pedrito Martinez Group, Pusha T, Rhye, Run the Jewels, San Fermin, Sky Ferreira, Starlito, Don Trip, Tim Hecker, Valerie June, Vampire Weekend, Van-Anh Vanessa Vo, Waxahatchee, Wayne Shorter, William Onyeabor</itunes:keywords>
+		</item>
+	</channel>
+</rss>
+

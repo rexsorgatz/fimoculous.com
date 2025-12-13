@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<rdf:RDF 
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+xmlns:dc="http://purl.org/dc/elements/1.1/" 
+xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+xmlns="http://purl.org/rss/1.0/">
+
+<channel rdf:about="http://www.fimoculous.com/">
+<title>fimoculous.com</title>
+<link>http://www.fimoculous.com/</link>
+<description></description>
+
+<items>
+<rdf:Seq>
+<rdf:li rdf:resource="" />
+<rdf:li rdf:resource="" />
+</rdf:Seq>
+</items>
+
+</channel>
+
+
+<item rdf:about="http://www.fimoculous.com/">
+<title>fox</title>
+<description> 
+<![CDATA[
+
+Ok, this Fark thread is pretty funny. <a href="http://forums.fark.com/cgi/fark/comments.pl?IDLink=485972" target="_blank">What if Fox News were around during other historical events?</a> (My <a href="http://home.twcny.rr.com/blahmustdie/suffragemarch.jpg" target="_blank">fave</a>, a response to <a href="http://www.salon.com/mwt/feature/2003/03/28/homefront_friday/index_np.html" target="_blank">this story</a>.)
+
+ Good <a href="http://www.nytimes.com/2003/04/06/fashion/06TUCK.html" target="_blank">interview with Joanne Tucker</a>, who left BBC to become the managing editor of al-Jazeera's English-language <a href="http://english.aljazeera.net/" target="_blank">website</a>.
+
+ <a href="http://www.gaytona.com/" target="_blank">Gaytona.com</a>, for gay NASCAR fans. (By the way, Google has zero matches for the phrase <a href="http://www.google.com/search?q=%22vegan+Republian%22" target="_blank">"Vegan Republican"</a>. This seems somehow relevant.)
+
+ I saw <a href="http://www.worldpress.org/Europe/808.cfm" target="_blank">Kiaromstami's <em>Ten</em></a> last night. Amazing. In many ways, the female inverse of his Cannes-winng film, <em>Taste of Cherry</em>. Already the best film of the year.
+
+ Third episode of the <a href="http://www.intothematrix.com/" target="_blank">Animatrix</a> is out.
+
+ In Minot (yes, North Dakota), Clear Channel owns all six commercial radio stations. "Among the six stations, Clear Channel now has only one full-time news employee, who is often heard reading statewide and national wire service dispatches," reports the <i>New York Times</i> in <a href="http://www.nytimes.com/2003/03/31/business/media/31MINO.html" target="_blank">this story</a>.
+
+ <a href="http://www.nytimes.com/2003/04/06/magazine/06QUESTIONS.html" target="_blank">Questions</a> for Iraqi pop star Ismail Hussain. Includes great detail about Uday Hussein's debauchery. In other news, Osama bin Laden's niece, Waffa, is <a href="http://www.mtv.com/news/articles/1470897/20030401/story.jhtml?headlines=true" target="_blank">having a difficult</a> time kick-starting her pop music career.
+
+ Suzanne Vega is hosting "<a href="http://www.musicmavericks.org/" target="_blank">American Mavericks</a>," a 13-part NPR series that "features the iconoclastic, tradition-breaking composers who shaped the development of American music-from Charles Ives, Henry Brant, Harry Partch, Laurie Anderson, Steve Reich and more." <a href="http://www.musicmavericks.org/programs/program1.html" target="_blank">Episode 1</a>, which which sets up the definition for "music maverick," includes music by John Cage, Charles Ives, and Steve Reich. The website includes a huge <a href="http://www.musicmavericks.org/listening/index.html" target="_blank">listening room</a>, a huge collection of <a href="http://www.musicmavericks.org/features/feature_partch.html" target="_blank">Harry Partch's instruments</a>, an <a href="http://www.musicmavericks.org/rhythmicon/index.html" target="_blank">interactive Rhythmicon</a>, and a <a href="http://www.musicmavericks.org/features/feature_unmixed_question.html" target="_blank">Charles Ives blender</a>. Good stuff so far.
+]]>
+</description>
+<link>http://www.fimoculous.com/</link>
+<dc:creator>rex</dc:creator>
+<dc:date>2003-04-07 00:00:00</dc:date>
+</item>
+
+
+
+</rdf:RDF>

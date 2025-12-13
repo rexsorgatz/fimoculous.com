@@ -1,0 +1,162 @@
+body {
+	background-image: url(http://www.millershalesespnbook.com/espn/images/tile-bg.png); 
+	background-repeat: repeat-x;
+	font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	text-align: center;
+	margin: 10px 0px 0px 0px; 
+	padding: 0px;
+	background-color: #fc0008;
+}
+p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 18px;
+	margin: 0px 0px 8px 0px;
+}
+a {
+	text-decoration: none;
+	color: #ab0505;
+	font-weight: bold;
+}
+a:hover {
+	text-decoration: underline;
+}
+h2 {
+	color: #FFF;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 0px;
+	margin: 0px;
+}
+h2 a {
+	color: #FFF;
+}
+h1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	font-weight: bold;
+	padding: 0px;
+	margin: 0px 0px 8px 0px;
+	text-decoration: none;
+}
+.main {
+	width: 1000px;
+	background-color: #FFF;
+	margin:18px auto;
+	padding-bottom: 50px;
+	text-align: left;
+}
+.header {
+	background-color: #000;
+	margin: 0px;
+	padding: 0px;
+}
+.logo {
+	width: 1000px;
+	text-align: left;
+	margin: 0px auto;
+	padding: 0px;
+}
+.logo img {
+	margin: 0px;
+	padding: 0px;
+}
+.subtitle {
+	color: #FFF;
+	font-size: 12px;
+	font-weight: bold;
+}
+.title {
+	background-color: #ab0505;
+	background-image: url('http://www.millershalesespnbook.com/espn/images/titleside.gif');
+	background-repeat: no-repeat;
+	font-style: italic;
+	padding: 5px 12px 6px 12px;
+	margin: 0px 0px 10px 0px;
+	display: table;
+}
+.fromtheauthors {
+	background-color: #dfdfdf;
+	text-align: left;
+	padding: 20px 0px 20px 50px;
+	margin-bottom: 25px;
+	height: 310px
+}
+.fromtheauthors p, .newespnbook p, .fromtheblog p, .fromtheblog h1 {
+	margin-left: 25px;
+}
+.fromtheauthors strong {
+	font-size: 15px;
+	line-height: 18px;
+}
+.cutline {
+	font-size: 10px;
+	text-align: right;
+	padding-right: 30px;
+}
+#livefromnybookcover {
+	position: relative;
+	left: 25px;
+	top: -25px;
+	float: right;
+}
+.newespnbook {
+	margin: 0px 0px 25px 25px;
+	width: 570px;
+}
+.gotastory {
+	margin: 0px 0px 25px 50px;
+	width: 550px;
+}
+.gotastory p {
+	margin-left: 25px;
+}
+.textareabox {
+	text-align:right;
+	float:right;
+	padding-left: 10px;
+	width: 250px;
+}
+.textareabox textarea {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	padding: 2px;
+	width:250px;
+	height:200px;
+	border: 1px solid gray;
+	background-color: #EAEAEA;
+}
+.textareabox .button {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	margin-top: 5px;
+	border: 1px solid gray;
+	background-color: #EAEAEA;
+}
+.textareabox .input {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	padding: 2px;
+	border: 1px solid gray;
+	background-color: #EAEAEA;
+}
+.fromtheblog {
+	margin: 0px 25px 0px 25px;
+	text-align: left;
+	width: 320px;
+	float: right;
+}
+.datestamp {
+	margin: 0px 0px 5px 25px;
+	color: #686868;
+	font-weight: bold;
+}
+.copyright {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #EAEAEA;
+	text-align: right;
+	font-size: 10px;
+	width: 1000px;
+	margin: -10px auto 20px auto;
+}

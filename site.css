@@ -1,0 +1,78 @@
+ul, ol, dl, p, h1, h2, h3, h4, h5, h6, address, form, table, blockquote, applet, embed, object, iframe, frameset{margin:0 0 14px;}
+html, body, div, span, applet, embed, object, iframe, frameset, p, q, blockquote, sub, sup, a, abbr, acronym, font, img, small, center, h1, h2, h3, h4, h5, h6, b, strong, big, u, ins, i, cite, em, var, dfn, address, s, strike, del, dl, dt, dd, ol, ul, li, pre, code, kbd, samp, tt, fieldset, legend, form, label, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio,video {border:0;background:none;}
+body{
+	margin: 0;
+	min-width: 980px;
+	padding: 0;
+	overflow-x: hidden;
+}
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+	margin: 0 0 20px 0;	
+}
+
+.float-left{
+	float: left;	
+	margin: 0 0 0 20px;
+}
+
+.float-right{
+	float: right;
+	margin: 0 20px 0 0;
+}
+
+#intro{
+	background:url(missy2.jpg) 50% 0 no-repeat fixed;
+	color: white;
+	height: 748px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#second{
+	background: url(images/secondBG.jpg) 50% 0 no-repeat fixed;
+	height: 1300px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0;
+}
+
+#second .bg{
+	background: url(missy1.jpg) 50% 0 no-repeat fixed;
+	height: 800px;
+	margin: 0 auto;
+	padding: 0;
+	position: absolute;
+	width: 600px;
+	z-index: 200;
+}
+
+#third{
+	background: url(images/thirdBG.jpg) 50% 0 no-repeat fixed;
+	height: 650px;
+	padding: 100px 0 0 0;	
+	background-color: #000;
+	color: #fff;
+}
+
+#fifth{
+	height: 400px;
+	margin: 0 auto;
+	padding: 40px 0 0 0;
+}
+
+.story{
+	margin: 0 auto;
+	min-width: 980px;
+	overflow: auto;
+	width: 980px;
+}
+
+.story .float-left, .story .float-right{
+	padding: 100px 0 0 0;
+	position: relative;
+	width: 350px;	
+}

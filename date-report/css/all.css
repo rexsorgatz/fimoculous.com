@@ -1,0 +1,1634 @@
+@font-face {
+	font-family: 'BebasNeueRegular';
+	src: url('../fonts/bebasneue-webfont-webfont.eot');
+	src: url('../fonts/bebasneue-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/bebasneue-webfont-webfont.woff') format('woff'),
+		 url('../fonts/bebasneue-webfont-webfont.ttf') format('truetype'),
+		 url('../fonts/bebasneue-webfont-webfont.svg#BebasNeueRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'CharisSILRegular';
+	src: url('../fonts/charissilr-webfont-webfont.eot');
+	src: url('../fonts/charissilr-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/charissilr-webfont-webfont.woff') format('woff'),
+		 url('../fonts/charissilr-webfont-webfont.ttf') format('truetype'),
+		 url('../fonts/charissilr-webfont-webfont.svg#CharisSILRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+* { 
+	margin:0; 
+	padding:0;
+}
+ul, ol, dl, p, h1, h2, h3, h4, h5, h6, address, form, table, blockquote, applet, embed, object, iframe, frameset{margin:0 0 14px;}
+html, body, div, span, applet, embed, object, iframe, frameset,
+p, q, blockquote, sub, sup, a, abbr, acronym, font, img, small, center,
+h1, h2, h3, h4, h5, h6, b, strong, big, u, ins,
+i, cite, em, var, dfn, address, s, strike, del,
+dl, dt, dd, ol, ul, li, pre, code, kbd, samp, tt,
+fieldset, legend, form, label, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, footer, header,
+hgroup, menu, nav, section, summary, time, mark, audio,video{
+	border:0;
+	background:none;
+}
+html {
+	height:100%;
+}
+body {
+	color:#666;
+	font:12px arial,sans-serif;
+	background:#fff url(../images/bg-header.gif) repeat-x;
+	min-width:1002px;
+	height:100%;
+}
+a {
+	text-decoration:none;
+	color:#3ca7dd;
+}
+a:hover {text-decoration:underline;}
+input, textarea, select {
+	font:100% arial,sans-serif;
+	vertical-align:middle;
+	color:#000;
+	overflow: auto;
+}
+label{vertical-align:middle;}
+button, input{
+	width: auto;
+	overflow: visible;
+}
+h1, h2, h3, h4, h5, h6, b, strong, th{font-weight:bold;}
+h1{font-size:200%;}
+h2{font-size:150%;}
+h3{font-size:120%;}
+h4{font-size:110%;}
+h5{font-size:100%;}
+h6{font-size:90%;}
+i, cite, em, var, dfn, address{font-style:italic;}
+u, ins {text-decoration: underline;}
+s, strike, del {text-decoration: line-through;}
+blockquote, blockquote:before, blockquote:after, q, q:before, q:after {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: '';}
+table, caption, tbody, tfoot, thead, tr, th, td{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+th, td{
+	border:1px solid #ccc;
+	padding:3px 7px;
+	text-align:left;
+	vertical-align:top;
+}
+th{
+	border-color:#999;
+	text-align:center;
+	vertical-align:middle;
+}
+ul{margin-left:1px;}
+ul li, ol li{list-style-position:inside;}
+ul li{list-style-type:disc;}
+.wrapper {
+	width:1002px;
+	margin:0 auto;
+	min-height:100%;
+}
+.wrapper-area {
+	padding-bottom:115px;
+}
+#header {
+	height:166px;
+	position:relative;
+	z-index:10;
+}
+#header .logo {
+	margin:0;
+	position:absolute;
+	top:20px;
+	left:0;
+	width:129px;
+	height:14px;
+	background:url(../images/logo.gif) no-repeat;
+	text-indent:-9999px;
+	overflow:hidden;
+}
+#header .logo a {
+	display:block;
+	height:100%;
+	overflow:hidden;
+}
+#nav {
+	position:absolute;
+	top:1px;
+	left:148px;
+	margin:0;
+	padding:0;
+	list-style:none;
+	font:17px/17px "BebasNeueRegular", Arial, Helvetica, sans-serif;
+	z-index:5;
+}
+#nav li {
+	list-style-position:outside;
+	list-style-type:none;
+	float:left;
+	background:url(../images/sep-01.gif) no-repeat 0 50%;
+}
+#nav li:first-child {
+	background:none;
+}
+#nav a {
+	color:#fff;
+	float:left;
+	padding:15px 18px 22px;
+}
+* + html #nav a {
+	padding:17px 18px 20px;
+}
+#nav a.newsletter {
+	padding-left:15px;
+}
+#nav a.newsletter span {
+	float:left;
+	background:url(../images/bg-newsletter.gif) no-repeat 0 5px;
+	cursor:pointer;
+	padding-left:27px;
+}
+#nav a:hover ,
+#nav li:hover a {
+	padding:15px 19px 29px 18px;
+	background:url(../images/bg-nav.gif) no-repeat 50% 0;
+	margin-right:-1px;
+	text-decoration:none;
+}
+#nav a.active {
+	color:#44acde;
+}
+* + html #nav a:hover ,
+* + html #nav li:hover a {
+	padding:17px 19px 27px 18px;
+}
+#nav a.newsletter:hover ,
+#nav li:hover a.newsletter {
+	padding:15px 19px 29px 15px;
+}
+* + html #nav a.newsletter:hover ,
+* + html #nav li:hover a.newsletter {
+	padding:17px 19px 27px 15px;
+}
+#nav a.newsletter:hover span ,
+#nav li:hover a.newsletter span {
+	background:url(../images/bg-newsletter.gif) no-repeat 0 -94px;
+}
+#nav li:hover {
+	position:relative;
+}
+#nav li:hover .drop {
+	display:block;
+}
+#nav .drop {
+	position:absolute;
+	top:61px;
+	left:50%;
+	margin-left:-121px;
+	width:250px;
+	display:none;
+	padding-top:4px;
+	background:url(../images/none.gif);
+}
+#nav .drop2 {
+	width:331px;
+	margin-left:-161px;
+}
+#nav .drop .t {
+	height:10px;
+	background:url(../images/bg-drop-01.png) no-repeat;
+	width:250px;
+}
+#nav .drop2 .t {
+	background:url(../images/bg-drop-02.png) no-repeat;
+	width:331px;
+}
+#nav .drop .b {
+	height:10px;
+	background:url(../images/bg-drop-01.png) no-repeat -520px 0;
+	width:250px;
+}
+#nav .drop2 .b {
+	background:url(../images/bg-drop-02.png) no-repeat -682px 0;
+	width:341px;
+}
+#nav .drop .c {
+	background:url(../images/bg-drop-01.png) repeat-y -260px 0;
+	width:250px;
+}
+#nav .drop2 .c {
+	background:url(../images/bg-drop-02.png) repeat-y -341px 0;
+	width:328px;
+	padding-left:2px;
+}
+#nav .drop .c:after {
+	clear:both;
+	content:'';
+	display:block;
+}
+#nav .drop ul {
+	float:left;
+	width:242px;
+	font:16px/18px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+	text-align:center;
+	padding:6px 0 16px;
+	margin:0;
+	overflow:hidden;
+}
+#nav .drop ul li {
+	float:none;
+	background:none;
+	border-bottom:1px solid #393c3c;
+}
+#nav .drop ul li:first-child a {
+	border-top:1px solid #393c3c;
+}
+#nav .drop ul a ,
+#nav li:hover .drop ul a {
+	color:#fff;
+	padding:5px 0;
+	background:none;
+	float:none;
+	display:block;
+}
+#nav .drop ul a:hover ,
+#nav li:hover .drop ul a:hover {
+	background:#e86c47;
+	padding:5px 0 !important;
+}
+#nav .drop .drop-area {
+	float:left;
+	width:265px;
+	padding:12px 27px 22px 29px;
+}
+#nav .drop .drop-area strong {
+	display:block;
+	font:25px/25px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+	color:#fff;
+	margin-bottom:10px;
+}
+#nav .drop .drop-area form {
+	margin:0;
+}
+#nav .drop .drop-area fieldset {
+	margin:0;
+	width:100%;
+	overflow:hidden;
+}
+#nav .drop .drop-area .text {
+	float:left;
+	width:146px;
+	padding:8px 10px 7px;
+	border:1px solid #e0e0e0;
+	font:16px/18px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+	color:#9a9a9a;
+	margin:0;
+}
+#nav .drop .drop-area .sbmt {
+	float:right;
+	width:87px;
+	height:31px;
+	background:url(../images/btn-signup.gif) no-repeat;
+	border:0;
+	margin:2px 0 0;
+	padding:0;
+	cursor:pointer;
+	text-indent:-9999px;
+	font-size:0;
+	line-height:0;
+}
+#header .networks {
+	position:absolute;
+	top:14px;
+	right:0;
+	list-style:none;
+}
+#header .networks li {
+	list-style-position:outside;
+	list-style-type:none;
+	float:left;
+	padding-left:5px;
+}
+#header .networks a {
+	display:block;
+	width:26px;
+	height:26px;
+	text-indent:-9999px;
+	overflow:hidden;
+	background:url(../images/bg-networks.gif) no-repeat;
+}
+#header .networks a.f {
+	background-position:0 0;
+}
+#header .networks a.t {
+	background-position:-31px 0;
+}
+#header .date {
+	position:absolute;
+	top:100px;
+	left:-1px;
+	color:#7e7e7e;
+	font:16px/18px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+}
+#header .logo2 {
+	position:absolute;
+	top:74px;
+	left:236px;
+	text-indent:-9999px;
+	overflow:hidden;
+	width:517px;
+	height:72px;
+	background:url(../images/logo2.gif) no-repeat;
+}
+#header .logo2 a {
+	display:block;
+	height:100%;
+	position:relative;
+}
+#header .widget_search {
+	position:absolute;
+	top:93px;
+	right:0;
+	width:168px;
+	border:1px solid #e0e0e0;
+	padding:0 11px 0 0;
+	background:#fff;
+}
+#header .widget_search .button {
+	float:right;
+	width:16px;
+	height:16px;
+	text-indent:-9999px;
+	overflow:hidden;
+	font-size:0;
+	line-height:0;
+	cursor:pointer;
+	margin:9px 0 0;
+	padding:0;
+	border:0;
+	background:url(../images/btn-search.gif) no-repeat;
+}
+#header .widget_search form {
+	margin:0;
+}
+#header .widget_search .text {
+	float:left;
+	width:135px;
+	padding:10px 5px 9px;
+	border:0;
+	background:none;
+	font:12px/14px Arial, Helvetica, sans-serif;
+	color:#333;
+}
+.main {
+	width:100%;
+	padding:0;
+}
+.columns-holder {
+	width:100%;
+}
+.columns-holder:after {
+	clear:both;
+	content:'';
+	display:block;
+}
+#content {
+	float:left;
+	width:667px;
+}
+.gallery {
+	width:663px;
+	overflow:hidden;
+	position:relative;
+	margin-bottom:10px;
+}
+.gallery .mask,
+.gallery2 .mask{
+	width:100%;
+	overflow:hidden;
+	position:relative;
+}
+.gallery ul {
+	width:99999px;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.gallery ul li {
+	float:left;
+	width:663px;
+	overflow:hidden;
+	list-style-position:outside;
+	list-style-type:none;
+	background:#45abdf url(../images/bg-gallery.gif) no-repeat 100% 0;
+	height:339px;
+}
+.gallery img {
+	float:left;
+}
+.gallery .text {
+	float:right;
+	width:118px;
+	padding:18px 20px 0 0;
+}
+.gallery h2 {
+	margin:0 0 3px;
+	color:#fff;
+	font:25px/25px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+}
+.gallery h2 a {
+	color:#fff;
+}
+.gallery strong {
+	color:#000;
+	font:16px/20px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+}
+.gallery strong a {
+	color:#000;
+}
+.gallery .switcher {
+	position:absolute;
+	bottom:15px;
+	right:12px;
+	width:134px;
+	overflow:hidden;
+}
+.gallery .switcher .cur-num,
+.gallery .switcher .all-num,
+.gallery2 .switcher .cur-num,
+.gallery2 .switcher .all-num{
+	font-style:normal;
+}
+.gallery .switcher .prev {
+	float:left;
+	width:37px;
+	height:37px;
+	background:url(../images/arrow-01.gif) no-repeat;
+	text-indent:-9999px;
+	overflow:hidden;
+}
+.gallery .switcher .prev:hover {
+	background-position:0 -37px;
+}
+.gallery .switcher .next {
+	float:right;
+	width:37px;
+	height:37px;
+	background:url(../images/arrow-01.gif) no-repeat -37px 0;
+	text-indent:-9999px;
+	overflow:hidden;
+}
+.gallery .switcher .next:hover {
+	background-position:-37px -37px;
+}
+.gallery .switcher span {
+	display:block;
+	text-align:center;
+	color:#fff;
+	font:16px/37px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+}
+.container {
+	width:674px;
+	overflow:hidden;
+	margin:0 -7px 0 -1px;
+}
+.container .widget {
+	float:left;
+	width:330px;
+	margin:0 7px 7px 0;
+	background:url(../images/bg-box-01.gif) repeat-y -340px 0;
+}
+.container .widget .holder {
+	width:330px;
+	background:url(../images/bg-box-01.gif) no-repeat 0 0;
+}
+.container .widget .frame {
+	width:326px;
+	background:url(../images/bg-box-01.gif) no-repeat -680px 100%;
+	padding:2px 4px 7px 2px;
+}
+.container .widget h3 {
+	background:url(../images/bg-title-01.gif) no-repeat;
+	font:18px/21px "BebasNeueRegular", Arial, Helvetica, sans-serif;
+	border-bottom:1px solid #e8e8e8;
+	padding:8px 14px 12px;
+	margin:0;
+	color:#242627;
+}
+.container .widget .box {
+	height:124px;
+	padding:11px 14px 11px 14px;
+	background:url(../images/sep-02.gif) repeat-x 0 100%;
+}
+.container .widget .last {
+	background:none;
+}
+.container .widget .box:after {
+	clear:both;
+	content:'';
+	display:block;
+}
+.container .widget .box img {
+	float:left;
+	margin-right:16px;
+}
+.container .widget .box h4 {
+	font:18px/18px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+	color:#3ca7dd;
+	margin:0 0 9px;
+	min-height:90px;
+}
+.container .share {
+	float:left;
+	width:128px;
+	height:25px;
+	background:url(../images/bg-share.gif) no-repeat;
+	line-height:25px;
+	color:#bdbdbd;
+	margin:0 0 0 -2px;
+	cursor:pointer;
+	position:relative;
+}
+.container .share:hover {
+	background:url(../images/bg-share.gif) no-repeat 0 -30px;
+	text-decoration:none;
+	color:#fff;
+}
+.container .share .f {
+	float:left;
+	width:29px;
+	padding-left:20px;
+}
+.container .share .t {
+	float:left;
+	width:21px;
+	padding-left:23px;
+}
+.container .share:hover .tooltip {
+	display:block;
+}
+.tooltip {
+	position:absolute;
+	top:-126px;
+	left:-7px;
+	width:128px;
+	height:109px;
+	background:url(../images/bg-tooltip.png) no-repeat;
+	padding:7px 14px 19px 8px;
+	display:none;
+}
+.tooltip .row {
+	width:100%;
+	overflow:hidden;
+	padding:7px 0;
+	border-top:1px solid #eaeaea;
+}
+.tooltip .row img {
+	margin:0 auto !important;
+	float:none !important;
+	display:block;
+}
+.tooltip .row:first-child {
+	border:none;
+}
+.tooltip .email {
+	display:block;
+	width:44px;
+	height:24px;
+	padding-left:24px;
+	text-align:center;
+	font:14px/20px "BebasNeueRegular", Arial, Helvetica, sans-serif;
+	color:#232526;
+	background:url(../images/btn-email.gif) no-repeat;
+	margin:0 auto;
+}
+.container .widget2 .box {
+	height:1%;
+	padding:12px 14px 11px 17px;
+	background:none;
+}
+.container .widget2 .box .box-area {
+	width:100%;
+}
+.container .widget2 .box .box-area:after {
+	clear:both;
+	content:'';
+	display:block;
+}
+.container .widget2 .box .img-holder {
+	float:left;
+	width:128px;
+	margin-right:17px;
+	padding-top:2px;
+}
+.container .widget2 .box .img-holder img {
+	display:block;
+	margin-bottom:23px;
+}
+.container .widget2 .box .img-holder2 img {
+	margin-bottom:47px;
+}
+.container .widget2 .box h4 {
+	min-height:0;
+	font-size:25px;
+	line-height:25px;
+	margin:0 0 17px;
+}
+.container .widget2 .box h4.type2 {
+	margin-bottom:6px;
+}
+.container .widget2 .text {
+	height:1%;
+	overflow:hidden;
+	font:16px/19px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+}
+.container .widget2 p {
+	margin:0;
+}
+.container .widget2 p.type2 {
+	margin:0 0 14px;
+}
+.container .widget2 .box .wide {
+	float:none;
+	display:block;
+	margin:-13px -15px 13px -18px;
+}
+.widget_polls-widget {
+	padding:0;
+}
+.container .widget_polls-widget .frame {
+	padding-bottom:20px;
+}
+.widget_polls-widget form {
+	margin:0;
+}
+.widget_polls-widget .wp-polls {
+	padding:14px 16px 0 15px;
+	height:1%;
+	overflow:hidden;
+}
+* + html .widget_polls-widget .wp-polls {
+	height:266px;
+}
+.widget_polls-widget .wp-polls p {
+	color:#3ca7dd;
+	font:18px/20px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+	margin:0 0 17px;
+}
+.widget_polls-widget .wp-polls-ans {
+	background:#f4f4f4 url(../images/bg-polls.gif) no-repeat;
+	width:293px;
+	margin-bottom:21px;
+}
+.widget_polls-widget .wp-polls-ul {
+	padding:0 0 2px;
+	margin:0;
+	width:293px;
+	background:url(../images/bg-polls.gif) no-repeat 100% 100%;
+}
+.widget_polls-widget .wp-polls-ul li {
+	list-style-position:outside;
+	list-style-type:none;
+	padding:7px 12px 8px;
+	border-top:1px solid #e2e2e2;
+	vertical-align:top;
+	height:1%;
+}
+.widget_polls-widget .wp-polls-ul li:first-child {
+	border:none;
+}
+.widget_polls-widget .wp-polls-ul input {
+	float:left;
+	width:14px;
+	height:14px;
+	margin:11px 15px 0 0;
+	padding:0;
+}
+.widget_polls-widget .wp-polls-ul label {
+	display:block;
+	height:1%;
+	overflow:hidden;
+	font:14px/18px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+}
+.widget_polls-widget .Buttons {
+	float:right;
+	width:87px;
+	height:31px;
+	background:url(../images/btn-vote.gif) no-repeat;
+	text-indent:-9999px;
+	font-size:0;
+	line-height:0;
+	border:0;
+	padding:0;
+	margin:0 4px 0 0;
+	cursor:pointer;
+}
+.container .widget_polls-widget .share {
+	margin:5px 0 0;
+}
+.story {
+	width:667px;
+	margin-bottom:7px;
+	background:url(../images/bg-box-02.gif) repeat-y -677px 0;
+}
+.story .top {
+	width:667px;
+	background:url(../images/bg-box-02.gif) no-repeat;
+}
+.story .btm {
+	width:663px;
+	background:url(../images/bg-box-02.gif) no-repeat -1354px 100%;
+	padding:2px 3px 3px 1px;
+}
+.story h3 {
+	background:url(../images/bg-title-02.gif) no-repeat;
+	font:18px/21px "BebasNeueRegular", Arial, Helvetica, sans-serif;
+	border-bottom:1px solid #e8e8e8;
+	padding:7px 16px 10px;
+	margin:0 1px;
+	color:#242627;
+}
+.story img {
+	display:block;
+}
+.quote-area {
+	background:#5cb3df url(../images/bg-quote.jpg) no-repeat 0 100%;
+	padding:56px 10px 56px;
+	text-align:center;
+	width:304px;
+	margin-bottom:-3px;
+	position:relative;
+	min-height:183px;
+}
+.quote-area .ajax-area {
+	width:100%;
+	overflow:hidden;
+}
+.quote-area blockquote {
+	padding:30px 0 0;
+	margin:0;
+	background:url(../images/bg-blockquote.gif) no-repeat 50% 0;
+	font:28px/28px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+	color:#fff;
+}
+.quote-area blockquote cite {
+	color:#000;
+	font-size:16px;
+	line-height:20px;
+	display:block;
+	font-style:normal;
+	padding:7px 0 0;
+}
+.quote-area .refresh {
+	position:absolute;
+	bottom:18px;
+	left:50%;
+	width:39px;
+	height:39px;
+	margin:0 0 0 -19px;
+	background:url(../images/btn-refresh.png) no-repeat;
+	text-indent:-9999px;
+	overflow:hidden;
+}
+.widget-dates {
+	padding:0;
+}
+.container .widget-dates h3 {
+	background:#242526 url(../images/bg-title-03.jpg) no-repeat;
+	margin:-1px -1px 0;
+	color:#fff;
+	width:298px;
+	overflow:hidden;
+	padding-bottom:14px;
+}
+.container .widget-dates h3 a {
+	float:right;
+	height:14px;
+	width:133px;
+	background:url(../images/logo.gif) no-repeat;
+	text-indent:-9999px;
+	overflow:hidden;
+	margin-top:5px;
+}
+.widget-dates .columns {
+	width:100%;
+	overflow:hidden;
+	margin-bottom:-3px;
+}
+.widget-dates .columns .col {
+	float:left;
+	width:126px;
+	border-right:1px solid #e8e8e8;
+	padding:17px 17px 3px 18px;
+	min-height:274px;
+}
+.widget-dates img {
+	display:block;
+	margin-bottom:10px;
+}
+.widget-dates .name {
+	display:block;
+	color:#e56a45;
+	font-size:13px;
+}
+.widget-dates .info {
+	display:block;
+	color:#444;
+	font-weight:bold;
+}
+.widget-dates .location {
+	display:block;
+	color:#b6bcbf;
+	font-weight:bold;
+}
+.widget-dates .text {
+	padding:6px 0 0;
+	font:16px/18px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+}
+.widget-dates .text strong {
+	font-weight:normal;
+	color:#999;
+	display:block;
+}
+#sidebar {
+	float:right;
+	width:330px;
+}
+#sidebar img {
+	display:block;
+}
+.tabs {
+	width:330px;
+	margin:-1px 7px 7px 0;
+	background:url(../images/bg-box-01.gif) repeat-y -340px 0;
+}
+.tabs .top {
+	width:330px;
+	background:url(../images/bg-box-01.gif) no-repeat 0 0;
+}
+.tabs .btm {
+	width:324px;
+	background:url(../images/bg-box-01.gif) no-repeat -680px 100%;
+	padding:2px 4px 17px 2px;
+}
+.tabset {
+	width:326px;
+	margin:-1px -1px 0;
+	font:18px/21px "BebasNeueRegular", Arial, Helvetica, sans-serif;
+	padding:0 0 15px;
+	overflow:hidden;
+}
+.tabset li {
+	float:left;
+	list-style-position:outside;
+	list-style-type:none;
+}
+.tabset a {
+	display:block;
+	width:127px;
+	padding:10px 18px;
+	height:24px;
+	background:url(../images/bg-tabs.gif) no-repeat 0 -44px;
+	color:#888787;
+}
+.tabset a:hover ,
+.tabset .active a {
+	background-position:0 0;
+	color:#242627;
+	text-decoration:none;
+}
+.tabcontent {
+	border-bottom:1px solid #e8e8e8;
+}
+.tabs .box {
+	height:1%;
+	overflow:hidden;
+	border-top:1px solid #e8e8e8;
+	padding:14px 10px 15px 17px;
+}
+.tabs .box img {
+	float:left;
+	margin:3px 15px 0 0;
+}
+.tabs .box .subtitle {
+	height:1%;
+	overflow:hidden;
+}
+.tabs .box .subtitle .date {
+	float:right;
+	color:#7e7e7e;
+	margin:4px 7px 0 0;
+	font:13px/15px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+}
+.tabs .box .subtitle strong {
+	color:#000;
+	font:16px/16px "BebasNeueRegular", Arial, Helvetica, sans-serif;
+}
+.tabs .box .subtitle strong a {
+	color:#000;
+}
+.tabs .box h3 {
+	font:17px/20px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+	margin:0;
+}
+.follow ,
+.sign {
+	padding:0 0 11px 1px;
+}
+.follow a ,
+.sign a {
+	display:block;
+}
+.fb-module {
+	padding:0 0 11px 1px;
+}
+.sign {
+	margin-bottom:4px;
+}
+.ad {
+	padding:0 0 7px 1px;
+}
+#sidebar .rss {
+	display:inline-block;
+	background:url(../images/ico-01.gif) no-repeat;
+	padding:0 0 0 35px;
+	margin-left:10px;
+	font:16px/27px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+	color:#666;
+}
+.posts-list {
+	width:1004px;
+	margin:0 -2px 0 0;
+	background:url(../images/bg-box-03.gif) repeat-y -1014px 0;
+}
+.posts-list .top {
+	width:1004px;
+	background:url(../images/bg-box-03.gif) no-repeat 0 0;
+}
+.posts-list .btm {
+	width:998px;
+	background:url(../images/bg-box-03.gif) no-repeat -2028px 100%;
+	padding:2px 4px 28px 2px;
+	overflow:hidden;
+}
+.posts-list ul {
+	width:100%;
+	overflow:hidden;
+	margin:0;
+	list-style:none;
+	padding:17px 0 0 18px;
+	font:16px/19px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+}
+.posts-list ul li {
+	float:left;
+	width:141px;
+	margin-right:23px;
+	list-style-position:outside;
+	list-style-type:none;
+}
+.posts-list img {
+	display:block;
+	margin-bottom:14px;
+}
+.posts-list strong {
+	display:block;
+	font-weight:normal;
+}
+#footer {
+	padding:25px 0;
+	width:1000px;
+	margin:-115px auto 0;
+	height:65px;
+	overflow:hidden;
+	position:relative;
+}
+#footer .follow-us {
+	float:right;
+	line-height:35px;
+}
+#footer .follow-us span {
+	float:left;
+	white-space:nowrap;
+	color:#838383;
+}
+#footer .follow-us ul {
+	margin:0;
+	padding:0 15px 0 5px;
+	list-style:none;
+	float:left;
+}
+#footer .follow-us ul li {
+	list-style-position:outside;
+	list-style-type:none;
+	float:left;
+	padding-left:4px;
+}
+#footer .follow-us ul a {
+	display:block;
+	width:36px;
+	height:35px;
+	text-indent:-9999px;
+	overflow:hidden;
+	background:url(../images/bg-networks.gif) no-repeat;
+}
+#footer .follow-us ul a.f {
+	background-position:-64px 0;
+}
+#footer .follow-us ul a.t {
+	background-position:-104px 0;
+}
+#footer .logo {
+	float:left;
+	width:216px;
+	height:22px;
+	background:url(../images/logo3.gif) no-repeat;
+	text-indent:-9999px;
+	overflow:hidden;
+	margin:1px 56px 0 8px;
+}
+.f-nav {
+	float:left;
+	margin:11px 0 0;
+	padding:0;
+	list-style:none;
+	font-weight:bold;
+}
+.f-nav li {
+	float:left;
+	list-style-position:outside;
+	list-style-type:none;
+	margin-right:15px;
+}
+.f-nav a {
+	color:#999;
+}
+.f-nav a:hover {
+	color:#3ab4d8;
+	text-decoration:none;
+}
+#footer p {
+	margin:0;
+	padding:14px 0 0 57px;
+	clear:both;
+	text-align:center;
+	color:#a8a8a8;
+	font-size:11px;
+}
+.title-line {
+	width:100%;
+	overflow:hidden;
+	background:url(../images/bg-title-line.gif) no-repeat 50% 0;
+	border-top:1px solid #e3e3e3;
+	padding:16px 0 19px;
+	margin:-3px 0 0;
+}
+.subnav {
+	float:right;
+	margin:0;
+	padding:5px 3px 0 0;
+	list-style:none;
+	font:15px/26px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+}
+.subnav li {
+	list-style-position:outside;
+	list-style-type:none;
+	float:left;
+	padding-left:4px;
+}
+.subnav a {
+	float:left;
+	background:#e5e5e5 url(../images/bg-subnav.gif) no-repeat;
+	color:#000;
+	height:26px;
+}
+.subnav a:hover ,
+.subnav a:hover span {
+	text-decoration:underline;
+}
+.subnav a span {
+	float:left;
+	background:url(../images/bg-subnav.gif) no-repeat 100% -29px;
+	padding:0 9px 0 28px;
+	cursor:pointer;
+}
+.title-line h2 {
+	font:30px/34px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+	color:#e86c47;
+	margin:0;
+	letter-spacing:-1px;
+}
+.post {
+	width:667px;
+	margin-bottom:5px;
+	background:url(../images/bg-box-02.gif) repeat-y -677px 0;
+}
+.post .top {
+	width:667px;
+	background:url(../images/bg-box-02.gif) no-repeat;
+}
+.post .btm {
+	width:663px;
+	background:url(../images/bg-box-02.gif) no-repeat -1354px 100%;
+	padding:2px 3px 3px 1px;
+}
+.post .title-area {
+	padding:16px 15px 16px 27px;
+	border-bottom:1px solid #e8e8e8;
+}
+.post h2 {
+	margin:0 0 5px;
+	font:36px/37px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+	color:#3ca7dd;
+	letter-spacing:-1px;
+}
+.post h3 {
+	margin:0;
+	font:19px/21px "BebasNeueRegular", Arial, Helvetica, sans-serif;
+	color:#232626;
+}
+.post .title-area .date {
+	display:block;
+	font:16px/18px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+	color:#232626;
+	padding:41px 0 0;
+}
+.post-content {
+	padding:23px 27px;
+	position:relative;
+	height:1%;
+	font:16px/20px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+}
+.post-content:after {
+	clear:both;
+	content:'';
+	display:block;
+}
+.share-box {
+	width:83px;
+	padding-top:7px;
+	background:url(../images/bg-box-04.png) no-repeat;
+	position:absolute;
+	top:-2px;
+	left:-80px;
+}
+.share-box .share-btm {
+	width:83px;
+	background:url(../images/bg-box-04.png) no-repeat -186px 100%;
+	padding-bottom:7px;
+}
+.share-box .share-area {
+	width:77px;
+	background:url(../images/bg-box-04.png) repeat-y -93px 0;
+	padding:0 3px 0 3px;
+}
+.share-box .row {
+	padding:8px 0;
+	border-top:1px solid #ebebeb;
+}
+.share-box .row:first-child {
+	border:none;
+}
+.share-box .email {
+	display:block;
+	width:39px;
+	height:24px;
+	padding-left:24px;
+	text-align:center;
+	font:14px/20px "BebasNeueRegular", Arial, Helvetica, sans-serif;
+	color:#232526;
+	background:url(../images/btn-email2.gif) no-repeat;
+	margin:0 auto;
+}
+.share-box img {
+	display:block;
+	margin:0 auto;
+}
+.align-left {
+	float:left;
+	margin:4px 20px 10px 0;
+}
+.align-right {
+	float:left;
+	margin:4px 0 10px 20px;
+}
+.post-content p {
+	margin:0 0 30px;
+}
+.post-content .fact {
+	float:right;
+	width:278px;
+	border-top:6px solid #44acde;
+	border-bottom:1px solid #e3e3e3;
+	margin:2px 5px 10px 30px;
+	padding:7px 0;
+}
+.post-content .fact strong {
+	display:block;
+	color:#3ca7dd;
+	font-size:25px;
+	line-height:25px;
+	font-weight:normal;
+	margin-bottom:13px;
+}
+.post-content .fact span {
+	display:block;
+	color:#232626;
+}
+.more-links {
+	padding:0 0 27px;
+}
+.more-links .subtitle {
+	display:block;
+	color:#000;
+	margin-bottom:5px;
+	font-weight:normal;
+}
+.more-links ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.more-links ul li {
+	padding-left:13px;
+	background:url(../images/bullet-01.gif) no-repeat 0 7px;
+	list-style-position:outside;
+	list-style-type:none;
+	margin-bottom:3px;
+}
+.filled {
+	width:100%;
+	overflow:hidden;
+	border-top:1px solid #e8e8e8;
+	line-height:26px;
+	padding:10px 0;
+}
+.filled span {
+	float:left;
+	padding-right:11px;
+	color:#000;
+}
+.filled ul {
+	height:1%;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	list-style:none;
+	font:16px/26px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+}
+.filled ul li {
+	list-style-position:outside;
+	list-style-type:none;
+	float:left;
+	padding:0 3px 3px 0;
+}
+.filled ul a {
+	float:left;
+	background:#e5e5e5 url(../images/bg-subnav.gif) no-repeat;
+	color:#000;
+	height:26px;
+}
+.filled ul a:hover ,
+.filled ul a:hover span {
+	text-decoration:underline;
+}
+.filled ul a span {
+	float:left;
+	background:url(../images/bg-subnav.gif) no-repeat 100% -29px;
+	padding:0 13px 0 32px;
+	cursor:pointer;
+}
+.shares {
+	width:100%;
+	overflow:hidden;
+	border-top:1px solid #e8e8e8;
+	padding:24px 0 5px;
+}
+.shares img {
+	float:left;
+	margin-right:17px;
+}
+.shares .email {
+	float:left;
+	width:44px;
+	height:24px;
+	padding-left:24px;
+	text-align:center;
+	font:14px/20px "BebasNeueRegular", Arial, Helvetica, sans-serif;
+	color:#232526;
+	background:url(../images/btn-email.gif) no-repeat;
+	margin:-2px 0 0;
+}
+.r-posts {
+	width:667px;
+	margin-bottom:6px;
+	background:url(../images/bg-box-02.gif) repeat-y -677px 0;
+}
+.r-posts .top {
+	width:667px;
+	background:url(../images/bg-box-02.gif) no-repeat;
+}
+.r-posts .btm {
+	width:635px;
+	background:url(../images/bg-box-02.gif) no-repeat -1354px 100%;
+	padding:22px 3px 25px 29px;
+	overflow:hidden;
+}
+.r-posts h3 {
+	font:22px/26px "BebasNeueRegular", Arial, Helvetica, sans-serif;
+	margin:0 0 15px;
+	color:#242627;
+}
+.r-posts ul {
+	width:640px;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.r-posts ul li {
+	float:left;
+	width:130px;
+	margin-right:28px;
+	list-style-position:outside;
+	list-style-type:none;
+}
+.r-posts ul img {
+	display:block;
+	margin-bottom:8px;
+}
+.r-posts ul span {
+	display:block;
+	font:17px/19px "BebasNeueRegular", Arial, Helvetica, sans-serif;
+	color:#1f2223;
+	margin-bottom:7px;
+}
+.r-posts ul strong {
+	display:block;
+	font:17px/19px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+}
+.comments-area {
+	width:667px;
+	margin-bottom:45px;
+	background:url(../images/bg-box-02.gif) repeat-y -677px 0;
+}
+.comments-area .top {
+	width:667px;
+	background:url(../images/bg-box-02.gif) no-repeat;
+}
+.comments-area .btm {
+	width:609px;
+	background:url(../images/bg-box-02.gif) no-repeat -1354px 100%;
+	padding:27px 29px 25px 29px;
+	overflow:hidden;
+}
+.comments-area h3 {
+	font:22px/26px "BebasNeueRegular", Arial, Helvetica, sans-serif;
+	margin:0 0 15px;
+	color:#242627;
+}
+.comments-area form {
+	margin-bottom:36px;
+}
+.comments-area .tarea {
+	width:604px;
+	height:123px;
+	background:url(../images/bg-tarea.gif) no-repeat;
+	overflow:hidden;
+	margin-bottom:15px;
+}
+.comments-area textarea {
+	width:594px;
+	height:113px;
+	min-width:594px;
+	min-height:113px;
+	max-width:594px;
+	max-height:113px;
+	padding:5px;
+	background:none;
+	font:12px/14px Arial, Helvetica, sans-serif;
+	color:#333;
+	border:0;
+	overflow:auto;
+}
+.comments-area .sbmt {
+	width:166px;
+	height:36px;
+	background:url(../images/btn-submit.gif) no-repeat;
+	cursor:pointer;
+	border:0;
+	margin:0;
+	padding:0;
+	font-size:0;
+	line-height:0;
+}
+.comments-area .title {
+	border-bottom:1px solid #e8e8e8;
+	font:17px/19px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+	color:#1f2223;
+	padding-bottom:3px;
+	margin-bottom:8px;
+}
+.comments-area .title strong {
+	font-weight:normal;
+}
+.comments {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+.comments li {
+	list-style-position:outside;
+	border-bottom:1px solid #e8e8e8;
+	list-style-type:none;
+}
+.comment {
+	width:100%;
+	overflow:hidden;
+	padding:19px 0 25px;
+}
+.comments ul {
+	list-style:none;
+	margin:0;
+	padding:0 0 0 62px;
+}
+.comments ul li {
+	border:none;
+	border-top:1px solid #e8e8e8;
+}
+.comment .author {
+	float:left;
+	width:200px;
+	padding-right:36px;
+}
+.comment .author img {
+	float:left;
+	margin-right:10px;
+}
+.comment .author a {
+	font-size:16px;
+	font-weight:bold;
+	line-height:20px;
+}
+.comment .author span {
+	display:block;
+	font-size:13px;
+	line-height:20px;
+	color:#979c9d;
+}
+.comment .text {
+	height:1%;
+	overflow:hidden;
+	font:16px/20px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+}
+.comment .text p {
+	margin:0;
+}
+.articles {
+	padding:2px 0 21px;
+	font:16px/20px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+}
+.article {
+	padding:17px 0 29px;
+	width:100%;
+	overflow:hidden;
+	border-top:1px solid #e8e8e8;
+}
+.article .number {
+	float:left;
+	width:63px;
+	height:23px;
+	background:url(../images/bg-number.gif) no-repeat;
+	color:#fff;
+	text-align:center;
+	font-size:20px;
+	line-height:23px;
+	padding:20px 0;
+	margin:3px 22px 0 0;
+}
+.article .text {
+	height:1%;
+	overflow:hidden;
+}
+.article h3 {
+	font:20px/24px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+	color:#232626;
+	margin:0 0 6px;
+}
+.article h3 a {
+	color:#232626;
+}
+.article p {
+	margin:0;
+}
+.results {
+	padding:3px 0 35px;
+}
+.results p {
+	margin:0 0 20px;
+}
+.graph {
+	width:604px;
+	background:#f6f5f5 url(../images/bg-graph.gif) no-repeat;
+	margin-bottom:27px;
+}
+.graph img {
+	float:left;
+}
+.graph .graph-btm {
+	width:560px;
+	background:url(../images/bg-graph.gif) no-repeat -614px 100%;
+	padding:27px 19px 26px 25px;
+	overflow:hidden;
+}
+.graph .legend {
+	float:right;
+	width:257px;
+	margin:57px 2px 0 0;
+	padding:0;
+	list-style:none;
+	border-top:1px solid #dddcdc;
+	line-height:18px;
+	color:#232626;
+}
+.graph .legend li {
+	width:100%;
+	overflow:hidden;
+	list-style-position:outside;
+	border-bottom:1px solid #dddcdc;
+	list-style-type:none;
+	padding:5px 0;
+}
+.graph .legend span {
+	display:block;
+	height:1%;
+	overflow:hidden;
+	padding-bottom:4px;
+}
+.graph .legend img {
+	margin-right:14px;
+}
+.gallery2 {
+	width:603px;
+	overflow:hidden;
+	position:relative;
+	background:#3ca7dd;
+	margin-bottom:28px;
+}
+.gallery2 ul {
+	width:99999px;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.gallery2 ul li {
+	float:left;
+	width:603px;
+	list-style-position:inside;
+	list-style-type:none;
+}
+.gallery2 img {
+	display:block;
+}
+.gallery2 .switcher {
+	height:1%;
+	padding:7px 10px;
+	overflow:hidden;
+}
+.gallery2 .switcher .prev {
+	float:left;
+	width:37px;
+	height:37px;
+	background:url(../images/arrow-01.gif) no-repeat;
+	text-indent:-9999px;
+	overflow:hidden;
+}
+.gallery2 .switcher .prev:hover {
+	background-position:0 -37px;
+}
+.gallery2 .switcher .next {
+	float:right;
+	width:37px;
+	height:37px;
+	background:url(../images/arrow-01.gif) no-repeat -37px 0;
+	text-indent:-9999px;
+	overflow:hidden;
+}
+.gallery2 .switcher .next:hover {
+	background-position:-37px -37px;
+}
+.gallery2 .switcher span {
+	display:block;
+	text-align:center;
+	color:#fff;
+	font:16px/37px "CharisSILRegular", Georgia, "Times New Roman", Times, serif;
+}

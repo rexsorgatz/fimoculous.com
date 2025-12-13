@@ -1,0 +1,53 @@
+	a.nav {
+		font-family: "Garamond, MS Serif", "New York", serif;
+		font-size: 18px;
+		font-weight: bold;
+		text-decoration: none;
+		color: black;
+		padding: 5px;
+		padding-left: 20px;
+		width: 150px;
+		background-image : url(bug.gif);
+		background-repeat : no-repeat;
+		letter-spacing : 1px;
+	}
+	a.nav:hover {
+		text-decoration: underline;
+	}
+	.subtitle {
+		font-family: "Garamond, MS Serif", "New York", serif;
+		font-size: 20px;
+		font-weight: bold;
+		color: white;
+		background-color: #4A5563;
+		text-align: center;
+		line-height: 30px;
+		letter-spacing : 2px;
+	}
+	BODY {
+		font-family: "Garamond, MS Serif", "New York", serif;
+		scrollbar-3dlight-color : #F2F2F2;
+		scrollbar-arrow-color : #CCCCCC;
+		scrollbar-base-color : #F2F2F2;
+		scrollbar-darkshadow-color : #F2F2F2;
+		scrollbar-face-color : gray;
+		scrollbar-highlight-color : #CCCCCC;
+		scrollbar-shadow-color : #CCCCCC;
+		scrollbar-track-color : #CCCCCC;
+	}
+	.bodytext, li {
+		font-family: "Garamond, MS Serif", "New York", serif;
+		font-size: 15px;
+	}
+	
+	h2 {
+		font-family: "Garamond, MS Serif", "New York", serif;
+		font-size: 18px;
+		font-weight: bold;
+	}
+	
+	h3 {
+		font-family: "Garamond, MS Serif", "New York", serif;
+		font-size: 15px;
+		font-weight: bold;
+	}

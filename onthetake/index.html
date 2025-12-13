@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>On The Take - A Podcast on the Culture of Takes</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="/onthetake/fire.ico" type="image/x-icon">
+<link rel="icon" href="/onthetake/fire.ico" type="image/x-icon">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- REMOVE -->
+<meta content="noindex" name="robots"/>
+<meta name="description" content="A weekly investigation into the creation and spread of hot takes."/>
+<meta property="og:description" content="A weekly investigation into the creation and spread of hot takes."/>
+<meta property="og:url" content="#"/>
+<meta property="og:title" content="On the Take"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="#"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="On the Take"/>
+<meta name="twitter:description" content="A weekly investigation into the creation and spread of hot takes."/>
+<meta name="twitter:url" content="#"/>
+<style>
+@font-face {
+    font-family: IntLight;
+    src: url(/onthetake/fonts/Intro-Light.otf);
+}
+@font-face {
+    font-family: IntThin;
+    src: url(/onthetake/fonts/Intro-Thin.otf);
+}
+@font-face {
+    font-family: IntBook;
+    src: url(/onthetake/fonts/Intro-Book.otf);
+}
+body,p,h1,h2,h3,h4,h5{margin:0;padding:0;}
+body {
+	background-color: #250a46;
+}
+a {
+	color: #422500;
+}
+h1 {
+	font-family: IntBook;
+	font-size: 20px;
+	color: #bd680b;
+	padding: 5px 8px 0 8px;
+	text-align: left;
+	line-height: 26px;
+}
+h2 {
+	font-family: IntLight;
+	font-size: 28px;
+	line-height: 36px;
+	color: #250a46;
+	width: 50%;
+	text-align: center;
+	margin: 20px auto 20px auto;
+}
+h3 {
+	font-family: IntThin;
+	font-size: 28px;
+	color: #bd680b;
+	text-transform: uppercase;
+	margin: 100px 0 30px 0;
+	letter-spacing: 3px;
+}
+h4 {
+	font-family: IntLight;
+	font-size: 16px;
+	color: #ee4e00;
+	padding: 5px 8px 10px 8px;
+	text-align: left;
+}
+h5 {
+	background: rgba(189, 104, 11, .4); 
+	font-family: IntLight;
+	font-size: 12px;
+	color: #ffef99;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 6px 0 4px 0;
+	position:absolute;
+	width: 100%;
+}
+p {
+	font-family: sans-serif;
+	font-size: 14px;
+	padding: 0 8px 10px 8px;
+	text-align: left;
+	line-height: 22px;
+	color: #422500;
+}
+rect {
+  fill: url(#grad1);
+}
+#stop1 {
+  animation: change-color1 4s ease-in-out infinite alternate;
+}
+#stop2 {
+  animation: change-color2 4s ease-in-out infinite alternate;
+}
+@keyframes change-color1 {
+  0% {stop-color: #a93800;} /* deep orange */
+  30% {stop-color: #ff7c00;} /* orange */
+  100% {stop-color: #250a46;} /* purple */
+}
+@keyframes change-color2 {
+  0% {stop-color: #250a46;} /* purple */
+  100% {stop-color: #ffd200;} /* yellow */
+}
+header {
+	position:relative;
+	width: 100%;
+	padding-bottom: 70px;
+}
+footer {
+	background-image: url("footer-gradient.jpg");
+	width: 100%;
+	height: 292px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#background-header {
+	z-index: 1;
+	width: 100%;
+	height: 580px;
+	position: relative;
+	width: 100%;
+}
+#ellipse {
+	z-index: 2;
+	width: 100%;
+	height: 300px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	top: 530px;
+}
+#logo {
+	z-index: 4;
+	width: 100%;
+	position: absolute;
+	top: 200px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 388px;
+}
+#drop-shadow {
+	z-index: 3;
+	width: 100%;
+	position: absolute;
+	top: 550px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 518px;
+	opacity: .6;
+}
+#apple-podcasts {
+	padding: 0;
+	margin: 70px 0 0 0;
+}
+main {
+	position: relative;
+	z-index: 5;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+	padding-bottom: 80px;
+	background-color: #fffdf0;
+}
+.container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.date {
+	float: left;
+	padding: 0 0 0 5px;
+}
+.ep {
+	float: right;
+	padding: 0 5px 0 0;
+	opacity: 0;
+}
+.audio-icon {
+	position:absolute; 
+	top: 140px; 
+	left: 50%; 
+	margin-left: -50px;
+	opacity: 0;
+}
+.episode {
+	max-width: 250px;
+	border: 1px solid #ffe5c9;
+	background-color: #fff;
+	position: relative;
+	float: left;
+	margin-right: 15px;
+	margin-left: 15px;
+	height: 100%;
+	transition: .2s ease-in;
+}
+.container a {
+	margin-bottom: 30px;
+}
+.host {
+	position: relative;
+	max-width: 390px;
+	float: left;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+.container .host p {
+	padding-left: 0;
+}
+a div.episode {
+	transition: .2s ease-in;
+}
+a div.episode:hover {
+	border-color: #bd680b;
+	background-color: #fff;
+}
+a div.episode h5 {
+	transition: .2s ease-in;
+}
+a div.episode:hover h5 {
+	background: rgba(189, 104, 11, .8); 
+}
+a div.episode .ep {
+	transition: .2s ease-in;
+}
+a div.episode:hover .ep {
+	opacity: 1;
+}
+a div.episode .audio-icon {
+	transition: .2s ease-in;
+}
+a div.episode:hover .audio-icon {
+	opacity: 1;
+}
+.newsletter {
+	float:left;
+	padding: 0 0 0 100px;
+}
+.newsletter h3 {
+	color: #ff8700;
+	margin-bottom: 10px;
+}
+.newsletter p {
+	color: #ffef99;
+	opacity: .5;
+	padding-left: 0;
+}
+.newsletter input[type="text"] {
+	padding: 15px 0 15px 40px;
+	background-color: #ffbf6c;
+	border: 1px solid #a03100;
+	width: 200px;
+	color: #bd680b;
+	font-family: IntLight;
+	font-size: 18px;
+	background-image: url("/onthetake/img/fire-medium.png");
+	background-repeat: no-repeat;
+	background-position: 2% center;
+}
+.newsletter input[type="text"]:focus {
+	outline-width: 0;
+}
+.newsletter input::placeholder {
+	color: #bd680b;
+	font-family: IntLight;
+	font-size: 18px;
+}
+.newsletter button {
+	font-family: IntThin;
+	font-size: 18px;
+	padding: 15px;
+	background-color: #ff8700;
+	border: 1px solid #a03100;
+	color: #ffef99;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	cursor: pointer; 
+}
+.btr {
+	float:right;
+	padding: 170px 100px 0 0;
+}
+iframe#twitter-widget-0 {
+	border: 1px solid #ffe5c9 !important;
+}
+@media only screen and (max-width: 600px) {
+	iframe#twitter-widget-0 {
+		width: 250px !important;
+	}
+    h2 {
+		width: 90%;
+		font-size: 24px;
+		line-height: 30px;
+    }
+	h3 {
+		font-size: 24px;
+	}
+    .newsletter {
+	    padding-left: 30px;
+    }
+    #logo {
+	    width: 250px;
+	    top: 320px;
+    }
+    #logo img {
+	    width: 280px;
+	    height: 280px;
+    }
+	#drop-shadow {
+		top: 530px;
+		width: 280px;
+	}
+	#drop-shadow img {
+		width: 280px;
+	}
+	.host {
+		max-width: 280px;
+	}
+	.host img {
+		width: 280px;
+		height: auto;
+	}
+}
+</style>
+</head>
+<body>
+<script>AOS.init();</script>
+<header>
+	<svg id="background-header">
+	  <defs>
+	    <linearGradient gradientTransform="rotate(-35)" id="grad1" gradientUnits="userSpaceOnUse">
+	      <stop id="stop1" offset="0%"/>
+	      <stop id="stop2" offset="100%"/>
+	    </linearGradient>
+	  </defs>
+	  <rect width="100%" height="100%"/>
+	</svg>
+	<svg id="ellipse" viewBox="0 0 100 70">
+		<ellipse fill="#fffdf0" cx="50" cy="50" rx="350" ry="50" />
+	</svg>
+	<div data-aos="zoom-in" id="logo">
+		<img src="/onthetake/img/logo.png" alt="on the take podcast" width="388" height="388" />
+	</div>
+	<div id="drop-shadow">
+		<img src="/onthetake/img/drop-shadow.png" width="518" height="78">
+	</div>
+</header>
+<main>
+	<h2>A weekly investigation into the creation and spread of <em>hot takes</em> &mdash; those provoking, controversial, infectious, and, on occasion, scorchingly ludicrous zingers that corrode modern media.</h2>
+	<a href="#"><img src="/onthetake/img/apple-podcasts.png" id="apple-podcasts" alt="listen on apple podcasts" width="206" height="53"/></a>
+	<h3>Most Recent Episodes</h3>
+	<div class="container">
+		<a data-aos="zoom-in-up" href="#">
+		<div class="episode">
+			<h5><div class="date">Aug 3</div><div class="ep">S01 • E04</div></h5>
+			<div class="audio-icon"><img src="/onthetake/img/listen.png" alt="listen" width="100" height="100"/></div>
+			<img src="/onthetake/img/guest-felix-salmon.jpg" alt="Felix Salmon" width="250" height="250"/>
+			<h1>Master of My Take</h1>
+			<h4>w/ Felix Salmon</h4>
+			<p>We invited Felix into the studio and he talked for 45 minutes, so our whole episode is dedicated to that today.</p>
+		</div>
+		</a>
+		<a data-aos="zoom-in-up" href="#">
+		<div class="episode">
+			<h5><div class="date">Sept 29</div><div class="ep">S01 • E03</div></h5>
+			<div class="audio-icon"><img src="/onthetake/img/listen.png" alt="listen" width="100" height="100"/></div>
+			<img src="/onthetake/img/guest-jia-tolentino.jpg" alt="Jia Tolentino" width="250" height="250"/>
+			<h1>How Many Takes Does It Take to Blow Out a Lightbulb?</h1>
+			<h4>w/ Jia Tolentino</h4>
+			<p>Wait, wait, don't tell me.</p>
+		</div>
+		</a>
+		<a data-aos="zoom-in-up" href="#">
+		<div class="episode">
+			<h5><div class="date">Sept 22</div><div class="ep">S01 • E02</div></h5>
+			<div class="audio-icon"><img src="/onthetake/img/listen.png" alt="listen" width="100" height="100"/></div>
+			<img src="/onthetake/img/guest-casey-newton.jpg" alt="Casey Newton" width="250" height="250"/>
+			<h1>Who Is the Greatest Take-Maker of Our Generation?</h1>
+			<h4>w/ Casey Newton</h4>
+			<p>This week's episode starts with a discussion about the New York Times Op-Ed page and ends with a debate about virtue signaling. Special guest Casey Newton steps in to tell us all about his days and nights. And our legacy takes this week are all somehow from the '70s.</p>
+		</div>
+		</a>
+		<a data-aos="zoom-in-up" href="#">
+		<div class="episode">
+			<h5><div class="date">Sept 15</div><div class="ep">S01 • E01</div></h5>
+			<div class="audio-icon"><img src="/onthetake/img/listen.png" alt="listen" width="100" height="100"/></div>
+			<img src="/onthetake/img/guest-osita-nwanevu.jpg" alt="Jia Tolentino" width="250" height="250"/>
+			<h1>The Best Hot Take</h1>
+			<h4>w/ Osita Nwanevu</h4>
+			<p>In the premiere episode, we investigate the true meaning of what constitutes a hot take. Later, Osita Nwanevu joins us in the studio to talk about Slate Takes. Finally, we wrap with a controversial legacy take.</p>
+		</div>
+		</a>
+	</div>
+	<h3>Follow Us</h3>
+	<div class="container">
+		<div class="twitter">
+			<div data-aos="flip-left"><a href="#"><img src="/onthetake/img/twitter-icon.png" alt="Twitter" width="150" height="150"/></a></div>
+			<h2>Interested in smokin-hot fresh takes? Over on that unnamed demonic bird platform, we are closely studying the take economy.</h2>
+			<a class="twitter-timeline" data-lang="en" data-width="650" data-height="600" data-dnt="true" data-theme="light" data-link-color="#bd680b" href="https://twitter.com/fimoculous?ref_src=twsrc%5Etfw">Tweets by fimoculous</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		</div>
+	</div>
+	<h3>Meet The Hosts</h3>
+	<div class="container">
+		<div data-aos="zoom-in-up" class="host">
+			<img src="/onthetake/img/rex-sorgatz.jpg" alt="Rex Sorgatz" width="390" height="258"/>
+			<p><strong>Rex Sorgatz</strong> (<a href="https://twitter.com/fimoculous">@fimoculous</a>) is an author, consultant, and creative technologist who lives in lower Manhattan. His favorite take of all time is the Magna Carta.</p>
+		</div>
+		<div data-aos="zoom-in-up" class="host">
+			<img src="/onthetake/img/matt-ruby.jpg" alt="Matt Ruby" width="390" height="258"/>
+			<p><strong>Matt Ruby</strong> (<a href="https://twitter.com/mattruby">@mattruby</a>) is standup comic and co-producer of <a href="https://www.facebook.com/hotsoupcomedy/">Hot Soup</a>. His favorite take of all time is Genesis.</p>
+		</div>
+	</div>
+</main>
+<footer>
+	<div class="newsletter">
+		<h3>Newsletter</h3>
+		<p>Sign up to be notified when new episodes drop.</p>
+		<input placeholder="enter email" type="text" /><button>Submit</button>
+	</div>
+	<div class="btr">
+		<a href="http://www.btrtoday.com/" target="_blank"><img src="/onthetake/img/btr-logo.png" alt="BreakThru Radio" width="147" height="49"/></a>
+	</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,285 @@
+#main { @extend %clearfix; }
+#content { float: left; width: 69%; }
+#sidebar { float: right; width: 27.7%; }
+@include media("<tablet"){
+	#content,
+	#sidebar { float: none; width: 100%; }
+}
+
+.widget {
+	margin-bottom: $vertical-rhythm;
+	@extend %clearfix;
+	ul {
+		padding-left: 2em;
+	}
+	select {
+		min-width: 150px;
+	}
+}
+
+
+
+.post-password-form {
+	font-size: 14px;
+	label {
+		display: block;
+	}
+	input[type='password'] {
+		font-size: 14px;
+		background: none;
+		margin: 0 4px 0 0;
+		width: 300px;
+		height: 32px;
+		box-sizing: border-box;
+	}
+}
+
+.search-form {
+	@extend %clearfix;
+	font-size: 14px;
+	margin: 0 0 3px;
+	input {
+		text-overflow: ellipsis;
+		background: none;
+		height: 32px;
+		float: left;
+		box-sizing: border-box;
+		&[type='search'] {
+			margin: 0 4px 0 0;
+			width: 150px;
+			
+		}
+	}
+}
+#sidebar{
+	.search-form {
+		input {
+			&[type='search'] {
+				@include media("<desktop"){
+					width: 110px;
+				}
+				@include media("<tablet"){
+					width: 170px;
+				}
+			}
+		}
+	}
+}
+.comment-form,
+.post-password-form,
+.search-form {
+	input[type='submit'] {
+		border: none;
+		display: inline-block;
+		text-transform: uppercase;
+		color: $btn-color;
+		text-align: center;
+		text-decoration: none;
+		background: $secondary-background-color;
+		font-size: 16px;
+		line-height: 32px;
+		font-weight: bold;
+		padding: 0 7px ;
+		height: 32px;
+		transition: opacity 0.3s;
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}
+.post-password-form {
+	label {
+		display: block;
+		padding-bottom: 4px;
+	}
+	p {
+		@extend %clearfix;
+	}
+	input {
+		box-sizing: border-box;
+		background: none;
+		float: left;
+		height: 32px;
+		&[type='password'] {
+			width: 150px;
+		}
+	}
+	input[type='submit'] {
+		height: 32px;
+		line-height: 32px;
+	}
+}
+
+
+.comment-form {
+	font-size: 14px;
+	label {
+		display: block;
+		padding-bottom: 4px;
+	}
+	textarea {
+		overflow: auto;
+		margin: 0;
+		height: 120px;
+		min-height: 120px;
+	}
+	textarea,
+	input[type='text'] {
+		background: none;
+		margin: 0 4px 0 0;
+		width: 300px;
+		height: 32px;
+		box-sizing: border-box;
+		font-size: 14px;
+		padding: 7px;
+	}
+	input[type='submit'] {
+		display: block;
+		float: none;
+		text-transform: uppercase;
+		color: $btn-color;
+		text-align: center;
+		text-decoration: none;
+		background: $secondary-background-color;
+		font-size: 16px;
+		font-weight: bold;
+		padding: 0 7px;
+		height: 32px;
+		line-height: 32px;
+		transition: opacity 0.3s;
+	}
+}
+
+.commentlist {
+	margin: 0 0 $vertical-rhythm;
+	.edit-link {
+		margin: 0;
+	}
+	.avatar-holder {
+		float: left;
+		margin: 0 $vertical-rhythm 4px 0;
+	}
+}
+
+.commentlist-item {
+	.commentlist-item {
+		padding: 0;
+		@include media(">=tablet") {
+			padding: 0 0 0 2em;
+			
+		}
+	}
+}
+
+.comment,
+.commentlist-holder {
+	overflow: hidden;
+}
+
+.commentlist-item .commentlist-item,
+.commentlist-item + .commentlist-item {
+	padding-top: $vertical-rhythm;
+}
+
+.widget_calendar {
+	#next {
+		text-align: right;
+	}
+}
+
+.gallery-item {
+	dt {
+		float: none;
+		padding: 0;
+	}
+}
+
+
+.wp-caption {
+	max-width: 100%;
+	clear: both;
+	border: 1px solid $gray;
+	padding: .4em;
+	margin-bottom: $vertical-rhythm;
+	img {
+		margin: 0;
+		vertical-align: top;
+	}
+	p {
+		margin: .4em 0 0;
+	}
+}
+
+div.aligncenter {
+	margin: 0 auto $vertical-rhythm;
+}
+
+img.aligncenter {
+	display: block;
+	margin: 0 auto;
+}
+
+.alignleft {
+	float: left;
+	margin: 0 $vertical-rhythm 4px 0; 
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 4px $vertical-rhythm; 
+}
+
+.mejs-container {
+	margin-bottom: $vertical-rhythm;
+}
+
+.gallery,
+.alignnone,
+.gallery-caption,
+.sticky,
+.bypostauthor {
+	height: auto;
+}
+.pagination{
+	@extend %clearfix;
+	margin: 0 0 15px;
+	.screen-reader-text{
+		display: none;
+	}
+	.page-numbers{
+		text-align: center;
+		margin: 0 3px 3px;
+		padding: 5px 0;
+		display: inline-block;
+		font-size: $base-font-size;
+		line-height: $base-line-height;
+		@include media("<tablet"){
+			font-size: 12px;
+			margin: 0 2px;
+		}
+		&.prev,
+		&.next{
+			text-transform: uppercase;
+			color: $btn-color;
+			text-align: center;
+			text-decoration: none;
+			background: $secondary-background-color;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 5px 7px;
+			transition: opacity 0.3s;
+			@include media("<tablet"){
+				font-size: 12px;
+			}
+			&:hover{
+				opacity: 0.8;
+			}
+		}
+	}
+	.nav-links{
+		font-size: 0;
+		line-height: 0;
+	}
+	
+	
+}

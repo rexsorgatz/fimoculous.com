@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Build output
+out/
+
+# OS junk
+.DS_Store
+
+# Large assets not tracked
+Restores/db/mspot2.mdb
+vidcon0.mov
+viewsource/alisa.mov
+

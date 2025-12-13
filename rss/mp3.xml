@@ -1,0 +1,22 @@
+
+	<rss version="2.0">
+		<channel>
+		<title>Fimoculous.com</title>
+		<description>Feeding On Itself</description>
+		<copyright>Rex Sorgatz</copyright> 
+		<link>http://www.fimoculous.com/</link>
+		<language>en-us</language> 
+		<ttl>60</ttl>
+			
+			<item>
+				<title>"Tom Courtenay," Yo La Tengo</title>
+				<link>http://www.fimoculous.com/archive/post-6479.cfm</link>
+				<pubDate>Thu, 10 Sep 2009 00:00:00 CST</pubDate>
+				<description><a href="/mp3/Yo-Tom-Courtnenay.mp3" target="_blank">mp3</a>. Did we ever find out if the rumors are true?</description>
+				<category>mp3</category>
+				 <author>rex@fimoculous.com (Rex Sorgatz)</author> 
+			</item>
+			
+		</channel>
+	</rss>
+	

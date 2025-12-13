@@ -1,0 +1,29 @@
+<html>
+<head>
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+			url: "https://www.w3schools.com/xml/note.xml",
+			dataType: "jsonp xml",
+            success: OnSuccess,
+		    error: OnError
+        });
+    });
+    function OnSuccess(data, status) {
+          alert("HI");
+    }
+    function OnError(data, status) {
+          alert("error");
+    }
+	</script>
+
+</head>
+<body>
+	<div id="show">Show: </div>
+	<div id="title">Title: </div>
+	<div id="description">Description: </div>
+</body>
+</html>

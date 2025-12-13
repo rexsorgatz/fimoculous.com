@@ -1,0 +1,278 @@
+/************ PRIMARY ************/
+body {
+	margin: 0 auto;
+	text-align: center;
+	font-family: "Gotham Black", "Arial Black", Gadget, Arial, Helvetica, sans-serif;
+	height: auto !important; 
+	height: 100%; 
+	min-height: 100%; 
+}
+h2 {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	line-height: 30px;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+p {
+	margin: 0 0 25px 0;
+	padding: 0;
+	font-size: 42px;
+	line-height: 55px;
+}
+li {
+	margin: 0 0 0 155px;
+	font-size: 35px;
+	line-height: 48px;
+}
+a {
+	border: 0;
+	text-decoration: none;
+}
+img {
+	border: 0;
+}
+.site-image {
+	border: 1px solid black;
+}
+div#header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 25px;
+	background-color: #000;
+	text-align: right;
+}
+@media screen {
+	body>div#header{
+	position: fixed;
+	}
+}
+#alpha {
+	width: 960px;
+	margin: 0 auto;
+}
+#beta {
+	background-color: #eaeaea;
+	overflow: hidden;
+	padding-bottom: 30px;
+}
+#gamma {
+	margin: 0 auto;
+	overflow: hidden;
+	padding-bottom: 30px;
+	border-top: 3px solid black;
+	padding-top: 30px;
+}
+.content {
+	width: 960px;
+	margin: 0 auto;
+	display: table;
+}
+.content p {
+	text-align: left;
+}
+/************ STRUCTURE ************/
+#logo {
+	width: 960px;
+	margin: 60px 0 40px 0;
+	height: 120px;
+}
+#navigation {
+	width: 960px;
+	height: 100px;
+	min-height: 100px;
+}
+
+#header img {
+	padding-top: 3px;
+}
+#header a {
+	padding: 5 10px 10px 0;
+	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+}
+/************ NAVIGATION ************/
+#navigation a, #navigation div {
+	float: left;
+	height: 101px;
+	width: 142px;
+	margin-right: 60px;
+}
+#alpha .navigation-tall a, #alpha #navigation-tall div {
+	height: 142px;
+}
+#navigation a#why, #navigation a#why-large, #navigation div#why {
+	margin-right: 0px;
+}
+#navigation span {
+	position: absolute;
+	left: -5000px;
+}
+#navigation #who {
+	background: url(images/nav-who.png) no-repeat 0 0;
+}
+#navigation #what {
+	background: url(images/nav-what.png) no-repeat 0 0;
+}
+#navigation #when {
+	background: url(images/nav-when.png) no-repeat 0 0;
+}
+#navigation #where {
+	background: url(images/nav-where.png) no-repeat 0 0;
+}
+#navigation #why {
+	background: url(images/nav-why.png) no-repeat 0 0;
+}
+#navigation #who:hover, #navigation #what:hover, #navigation #when:hover, #navigation #where:hover, #navigation #why:hover {
+	background-position: 0 -102px;
+}
+#navigation div#who, #navigation div#what, #navigation div#when, #navigation div#where, #navigation div#why {
+	background-position: 0 -102px;
+}
+#navigation #who-large {
+	background: url(images/nav-who-large.png) no-repeat 0 0;
+}
+#navigation #what-large {
+	background: url(images/nav-what-large.png) no-repeat 0 0;
+}
+#navigation #when-large {
+	background: url(images/nav-when-large.png) no-repeat 0 0;
+}
+#navigation #where-large {
+	background: url(images/nav-where-large.png) no-repeat 0 0;
+}
+#navigation #why-large {
+	background: url(images/nav-why-large.png) no-repeat 0 0;
+}
+#navigation #who-large:hover, #navigation #what-large:hover, #navigation #when-large:hover, #navigation #where-large:hover, #navigation #why-large:hover {
+	background-position: 0 -142px;
+}
+#navigation div#who-large, #navigation div#what-large, #navigation div#when-large, #navigation div#where-large, #navigation div#why-large {
+	background-position: 0 -142px;
+}
+/************ COLORS ************/
+.color-a60000 {
+	background-color: #a60000;
+}
+.color-0060ff {
+	background-color: #0060ff;
+}
+.color-ea00ff {
+	background-color: #ea00ff;
+}
+.color-ffea00 {
+	background-color: #ffea00;
+}
+.color-00d8e6 {
+	background-color: #00d8e6;
+}
+.color-ff7e00 {
+	background-color: #ff7e00;
+}
+.color-00ff06 {
+	background-color: #00ff06;
+}
+.color-ffffff {
+	background-color: #fff;
+}
+.color-000000 {
+	background-color: #000;
+}
+.color-edeeb4 {
+	background-color: #edeeb4;
+}
+.color-8f0087 {
+	background-color: #8f0087;
+}
+.color-eaa7a2 {
+	background-color: #eaa7a2;
+}
+/************ WHERE ************/
+.teaser {
+	padding: 5px 0 0 20px; 
+	margin-top: 60px;
+	margin-bottom: 60px;
+	text-align: left;
+}
+.teaser p a {
+	color: #000;
+}
+.teaser p span {
+	background-color: #fbe600;
+	padding: 5px 5px 5px 5px;
+}
+.teaser p {
+	margin-left: 120px;
+}
+.teaser p a:hover {
+	color: #fff;
+	background-color: #000;
+}
+.teaser img {
+	margin-top: -12px;
+}
+.bottom {
+	padding: 0 20px 10px 20px; 
+	margin: 0 0 10px 0; 
+}
+#beta p {
+	font-size: 30px;
+	background-color: #000;
+	color: #fff;
+	text-transform: uppercase;
+}
+.column {
+	width: 180px; 
+	float: left;
+	margin-left: 50px;
+}
+.clients {
+	padding-top: 20px; 
+}
+.client-image {
+	clear: both; 
+	margin-top: 10px; 
+	width:420px; 
+	text-align: right; 
+	margin-right: 10px; 
+	float: left;
+}
+.client-skills {
+	width:520px; 
+	margin-top: 10px; 
+	margin-left: 10px; 
+	float: right;
+}
+.skill {
+	padding-top: 15px;
+	clear: both;
+}
+.small-box {
+	height: 30px;
+	width: 30px;
+	float: left;
+	margin-right: 6px;
+	border: 1px solid #000;
+}
+.tall-box {
+	height: 82px;
+	width: 30px;
+	float: left;
+	margin-right: 6px;
+	border: 1px solid #000;
+}
+.empty-tall-box {
+	height: 82px;
+	width: 32px !important;
+	width: 30px;
+	float: left;
+	margin-right: 6px;
+}
+.label {
+	float: left;
+}
