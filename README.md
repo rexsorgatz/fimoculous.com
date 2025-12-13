@@ -9,7 +9,7 @@ python3 -m venv .venv
 .venv/bin/python scripts/build_static.py
 cp -R images styles rss mp3 favicon.ico favicon.png robots.txt _headers out/
 ```
-Output lives in `out/` (ignored by git). Pages keep legacy URLs like `/archive/post-5738.cfm`.
+Output lives in `out/` (ignored by git). Pages keep legacy URLs like `/archive/post-5738.cfm`. Sitemap is written to `out/sitemap.xml`.
 
 ## Cloudflare Pages
 - Build command:  

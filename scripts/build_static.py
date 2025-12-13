@@ -15,6 +15,7 @@ OUT_DIR = ROOT / "out"
 TEMPLATE_DIR = ROOT / "templates"
 POST_TEMPLATE = "post.html"
 HOME_TEMPLATE = "home.html"
+BASE_URL = "https://www.fimoculous.com"
 
 
 def normalize_date(raw: str) -> Tuple[str, object]:
@@ -96,6 +97,7 @@ def build():
 
     count = 0
     home_posts: List[dict] = []
+    sitemap_urls: List[Tuple[str, str]] = []  # (loc, lastmod)
 
     with (DB_DIR / "tblContent.csv").open(newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
@@ -137,6 +139,14 @@ def build():
             out_path.write_text(rendered, encoding="utf-8")
             count += 1
 
+            # Sitemap entry for post
+            lastmod = ""
+            if isinstance(date_obj, datetime):
+                lastmod = date_obj.strftime("%Y-%m-%d")
+            sitemap_urls.append(
+                (f"{BASE_URL}/archive/post-{entry_id}.cfm", lastmod)
+            )
+
             # Collect for homepage (filter out specific categories)
             banned = {"convo", "mp3"}
             cat_codes_lower = [c.lower() for c in cat_codes]
@@ -176,6 +186,23 @@ def build():
     home_rendered = home_template.render(posts=latest)
 
     (OUT_DIR / "index.html").write_text(home_rendered, encoding="utf-8")
+
+    # Sitemap (homepage + posts)
+    sitemap_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ]
+    sitemap_lines.append("<url>")
+    sitemap_lines.append(f"<loc>{BASE_URL}/</loc>")
+    sitemap_lines.append("</url>")
+    for loc, lastmod in sitemap_urls:
+        sitemap_lines.append("<url>")
+        sitemap_lines.append(f"<loc>{loc}</loc>")
+        if lastmod:
+            sitemap_lines.append(f"<lastmod>{lastmod}</lastmod>")
+        sitemap_lines.append("</url>")
+    sitemap_lines.append("</urlset>")
+    (OUT_DIR / "sitemap.xml").write_text("\n".join(sitemap_lines), encoding="utf-8")
 
 
 if __name__ == "__main__":
