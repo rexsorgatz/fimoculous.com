@@ -14,6 +14,7 @@ DB_DIR = ROOT / "db"
 OUT_DIR = ROOT / "out"
 TEMPLATE_DIR = ROOT / "templates"
 POST_TEMPLATE = "post.html"
+HOME_TEMPLATE = "home.html"
 
 
 def normalize_date(raw: str) -> Tuple[str, object]:
@@ -85,6 +86,7 @@ def build():
         autoescape=select_autoescape(["html", "xml", "cfm"]),
     )
     template = env.get_template(POST_TEMPLATE)
+    home_template = env.get_template(HOME_TEMPLATE)
 
     cats, entry_cats = load_categories()
     comments = load_comments()
@@ -93,6 +95,8 @@ def build():
     archive_dir.mkdir(parents=True, exist_ok=True)
 
     count = 0
+    home_posts: List[dict] = []
+
     with (DB_DIR / "tblContent.csv").open(newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
             entry_id = (row.get("entrynumber") or "").strip()
@@ -133,7 +137,45 @@ def build():
             out_path.write_text(rendered, encoding="utf-8")
             count += 1
 
+            # Collect for homepage (filter out specific categories)
+            banned = {"convo", "mp3"}
+            cat_codes_lower = [c.lower() for c in cat_codes]
+            if any(c in banned for c in cat_codes_lower):
+                continue
+            try:
+                entry_num_int = int(entry_id)
+            except ValueError:
+                entry_num_int = 0
+            # Prepare homepage metadata
+            if isinstance(date_obj, datetime):
+                home_datebox = date_obj.strftime("%A").lower()
+                home_year = date_obj.strftime("%Y")
+            else:
+                home_datebox = ""
+                home_year = ""
+
+            home_posts.append(
+                {
+                    "entry_id": entry_id,
+                    "entry_num_int": entry_num_int,
+                    "title": title,
+                    "body": body_html,
+                    "categories": cat_codes_lower,
+                    "commentnum": (row.get("commentnum") or "").strip(),
+                    "datebox": home_datebox,
+                    "date_year": home_year,
+                }
+            )
+
     print(f"Rendered {count} posts to {archive_dir}")
+
+    # Build homepage with latest 20 posts (excluding banned categories)
+    home_posts.sort(key=lambda p: p["entry_num_int"], reverse=True)
+    latest = home_posts[:20]
+
+    home_rendered = home_template.render(posts=latest)
+
+    (OUT_DIR / "index.html").write_text(home_rendered, encoding="utf-8")
 
 
 if __name__ == "__main__":
