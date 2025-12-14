@@ -34,7 +34,7 @@
 		{% if post.categories %}
 		<div class="tags">
 			{% for cat in post.categories %}
-				<a href="http://www.fimoculous.com/archive/archivetemplate.cfm?cat={{ cat|lower }}">{{ cat|lower }}</a>{% if not loop.last %} <img src="/images/dot.png" alt="" width="5" height="5" hspace="0" vspace="0" border="0">{% endif %}
+				<a href="/archive/cat/{{ cat|lower }}/">{{ cat|lower }}</a>{% if not loop.last %} <img src="/images/dot.png" alt="" width="5" height="5" hspace="0" vspace="0" border="0">{% endif %}
 			{% endfor %}
 		</div>
 		{% endif %}
