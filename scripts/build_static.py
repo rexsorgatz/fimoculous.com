@@ -15,6 +15,7 @@ OUT_DIR = ROOT / "out"
 TEMPLATE_DIR = ROOT / "templates"
 POST_TEMPLATE = "post.html"
 HOME_TEMPLATE = "home.html"
+CATEGORY_TEMPLATE = "category.html"
 BASE_URL = "https://www.fimoculous.com"
 
 
@@ -88,6 +89,7 @@ def build():
     )
     template = env.get_template(POST_TEMPLATE)
     home_template = env.get_template(HOME_TEMPLATE)
+    category_template = env.get_template(CATEGORY_TEMPLATE)
 
     cats, entry_cats = load_categories()
     comments = load_comments()
@@ -98,6 +100,7 @@ def build():
     count = 0
     home_posts: List[dict] = []
     sitemap_urls: List[Tuple[str, str]] = []  # (loc, lastmod)
+    cat_posts: Dict[str, List[dict]] = {}
 
     with (DB_DIR / "tblContent.csv").open(newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
@@ -147,6 +150,21 @@ def build():
                 (f"{BASE_URL}/archive/post-{entry_id}.cfm", lastmod)
             )
 
+            # Track posts by category for category pages
+            cat_codes_lower = [c.lower() for c in cat_codes]
+            for code in cat_codes_lower:
+                cat_posts.setdefault(code, []).append(
+                    {
+                        "entry_id": entry_id,
+                        "title": title,
+                        "body": body_html,
+                        "datebox": datebox,
+                        "date_year": date_year,
+                        "commentnum": (row.get("commentnum") or "").strip(),
+                        "categories": cat_codes_lower,
+                    }
+                )
+
             # Collect for homepage (filter out specific categories)
             banned = {"convo", "mp3"}
             cat_codes_lower = [c.lower() for c in cat_codes]
@@ -187,6 +205,20 @@ def build():
 
     (OUT_DIR / "index.html").write_text(home_rendered, encoding="utf-8")
 
+    # Category pages
+    redirects: List[str] = []
+    for code, posts in cat_posts.items():
+        posts.sort(key=lambda p: int(p["entry_id"]))
+        posts.reverse()
+        cat_path = OUT_DIR / "archive" / "cat" / code
+        cat_path.mkdir(parents=True, exist_ok=True)
+        rendered_cat = category_template.render(
+            category=code,
+            posts=posts,
+        )
+        (cat_path / "index.html").write_text(rendered_cat, encoding="utf-8")
+        redirects.append(f"/archive/archivetemplate.cfm?cat={code} /archive/cat/{code}/ 301")
+
     # Sitemap (homepage + posts)
     sitemap_lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -203,6 +235,11 @@ def build():
         sitemap_lines.append("</url>")
     sitemap_lines.append("</urlset>")
     (OUT_DIR / "sitemap.xml").write_text("\n".join(sitemap_lines), encoding="utf-8")
+
+    # Redirects for category pages (query param -> static path)
+    if redirects:
+        redirects.append("")  # trailing newline
+        (OUT_DIR / "_redirects").write_text("\n".join(redirects), encoding="utf-8")
 
 
 if __name__ == "__main__":
