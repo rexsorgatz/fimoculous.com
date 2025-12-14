@@ -206,7 +206,6 @@ def build():
     (OUT_DIR / "index.html").write_text(home_rendered, encoding="utf-8")
 
     # Category pages
-    redirects: List[str] = []
     for code, posts in cat_posts.items():
         posts.sort(key=lambda p: int(p["entry_id"]))
         posts.reverse()
@@ -217,9 +216,32 @@ def build():
             posts=posts,
         )
         (cat_path / "index.html").write_text(rendered_cat, encoding="utf-8")
-        redirects.append(f"/archive/archivetemplate.cfm?cat={code} /archive/cat/{code}/ 301")
+        sitemap_urls.append((f"{BASE_URL}/archive/cat/{code}/", ""))
 
-    # Sitemap (homepage + posts)
+    # Legacy archivetemplate.cfm handler: JS redirect based on ?cat=
+    archivetemplate_html = """<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Archive</title>
+<meta http-equiv="refresh" content="0;url=/archive/">
+<script>
+(function() {
+  var p = new URLSearchParams(window.location.search);
+  var cat = (p.get("cat") || "").toLowerCase();
+  if (cat) {
+    window.location.replace("/archive/cat/" + encodeURIComponent(cat) + "/");
+  } else {
+    window.location.replace("/archive/");
+  }
+})();
+</script>
+</head><body>
+<p>If you are not redirected, <a href="/archive/">go to the archive</a>.</p>
+</body></html>
+"""
+    (OUT_DIR / "archive" / "archivetemplate.cfm").write_text(
+        archivetemplate_html, encoding="utf-8"
+    )
+
+    # Sitemap (homepage + posts + categories)
     sitemap_lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -235,11 +257,6 @@ def build():
         sitemap_lines.append("</url>")
     sitemap_lines.append("</urlset>")
     (OUT_DIR / "sitemap.xml").write_text("\n".join(sitemap_lines), encoding="utf-8")
-
-    # Redirects for category pages (query param -> static path)
-    if redirects:
-        redirects.append("")  # trailing newline
-        (OUT_DIR / "_redirects").write_text("\n".join(redirects), encoding="utf-8")
 
 
 if __name__ == "__main__":
