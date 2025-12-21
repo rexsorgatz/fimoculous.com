@@ -17,6 +17,16 @@ POST_TEMPLATE = "post.html"
 HOME_TEMPLATE = "home.html"
 CATEGORY_TEMPLATE = "category.html"
 BASE_URL = "https://www.fimoculous.com"
+YEAR_REVIEW_PAGES = [
+    "year-review-2003.cfm",
+    "year-review-2004.cfm",
+    "year-review-2005.cfm",
+    "year-review-2006.cfm",
+    "year-review-2007.cfm",
+    "year-review-2008.cfm",
+    "year-review-2009.cfm",
+    "year-review-2010.cfm",
+]
 
 
 def normalize_date(raw: str) -> Tuple[str, object]:
@@ -240,6 +250,17 @@ def build():
     (OUT_DIR / "archive" / "archivetemplate.cfm").write_text(
         archivetemplate_html, encoding="utf-8"
     )
+
+    # Legacy year-in-review pages (ship as-is)
+    for filename in YEAR_REVIEW_PAGES:
+        src = ROOT / filename
+        if not src.exists():
+            print(f"Skipping missing legacy file: {filename}")
+            continue
+        dest = OUT_DIR / filename
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_bytes(src.read_bytes())
+        sitemap_urls.append((f"{BASE_URL}/{filename}", ""))
 
     # Sitemap (homepage + posts + categories)
     sitemap_lines = [
