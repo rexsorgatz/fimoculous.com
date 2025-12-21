@@ -76,6 +76,44 @@ END_OF_YEAR_CATEGORY_ORDER = [
     "musicvideos",
     "words",
 ]
+HEADER_HTML = """<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Fimoculous.com</title>
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="content-language" content="en-us" />
+<meta name="keywords" lang="en-us" content="rex sorgatz, fimoculous, blog, blogger, rex, sorgatz, media, community, urban, parasite" />
+<meta name="description" content="Rex Sorgatz' website, feeding on internet culture." />
+<meta name="author" content="Rex Sorgatz" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="canonical" href="https://www.fimoculous.com/" />
+<link rel="icon" type="image/png" href="http://www.fimoculous.com/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Fimoculous" href="http://www.fimoculous.com/rss/rss.xml" />
+<link rel="stylesheet" type="text/css" href="/styles/styles4.css?ver=4">
+<script language="JavaScript" src="/styles/scripts.js" type="text/javascript"></script>
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+<!--[if IE]>
+<style>
+.post .datebox { margin-top: -12px; }
+#footer #footer-content #dot-icon img { margin-top: 10px; }
+#transparent { width: 0; height: 0; }
+</style>
+<![endif]-->
+</head>
+"""
+
+FOOTER_HTML = """
+<div id="footer">
+        <div id="footer-content">
+        <h1><span class="firstletter">R</span>ex <span class="firstletter">S</span>orgatz</h1>
+        <p><a href="http://kindasortamedia.com/">Company</a> <img src="/images/dot.png" alt="" width="5" height="5" hspace="0" vspace="2" border="0"> <a href="http://fimoculous.tumblr.com/">Tumblr</a> <img src="/images/dot.png" alt="" width="5" height="5" hspace="0" vspace="2" border="0"> <a href="http://vyou.com/rexsorgatz">VYou</a> <img src="/images/dot.png" alt="" width="5" height="5" hspace="0" vspace="2" border="0"> <a href="http://twitter.com/fimoculous">Twitter</a> <img src="/images/dot.png" alt="" width="5" height="5" hspace="0" vspace="2" border="0"> <a href="https://plus.google.com/113068441549452664746/posts">Google+</a> <br/> <a href="http://www.facebook.com/rexsorgatz">Facebook</a> <img src="/images/dot.png" alt="" width="5" height="5" hspace="0" vspace="2" border="0"> <a href="http://statigr.am/rexsorgatz">Instagram</a> <img src="/images/dot.png" alt="" width="5" height="5" hspace="0" vspace="2" border="0"> <a href="http://www.flickr.com/photos/fimoculous/">Flickr</a> <img src="/images/dot.png" alt="" width="5" height="5" hspace="0" vspace="2" border="0"> <a href="http://amazon.com/o/registry/3KKN9EH42V9T4/">Amazon</a> <img src="/images/dot.png" alt="" width="5" height="5" hspace="0" vspace="2" border="0"> <a href="http://foursquare.com/fimoculous">Foursquare</a></p>
+        <p><a href="mailto:rex@fimoculous.com?subject=Fimoculous&body=Your%20blog%20is%20dumb.">rex@fimoculous.com</a></p>
+        <p>A fimoculous is a micro-organism that consumes its own waste for sustenance.<br/><br/></p>
+        <div id="footer-image"><img src="/images/logo-footer.png" width="338" height="121" alt=""></div>
+    </div>
+</div>
+"""
 
 
 def normalize_date(raw: str) -> Tuple[str, object]:
@@ -234,24 +272,18 @@ def render_year_review_page(entries: List[dict], year: int, nav_years: List[int]
             nav_links.append(f'<a href="/year-review-{y}.cfm">{y}</a>')
 
     html_parts = [
-        '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">',
-        "<html>",
-        "<head>",
-        f"<title>{year} Year Lists - Fimoculous.com</title>",
-        '<link rel="stylesheet" type="text/css" href="/styles/fimostyles_ideal.css">',
-        "<style>",
-        ".mode{display:none;} .catrowsshrt{margin:4px 0;}",
-        ".list{float:left;width:60%;}",
-        ".source{float:left;width:25%;}",
-        ".datelist{float:left;width:15%;text-align:right;}",
-        ".sortnav{margin:10px 0;padding:8px 0;border-top:1px dotted #ccc;border-bottom:1px dotted #ccc;}",
-        "</style>",
-        "</head>",
+        HEADER_HTML.replace("<title>Fimoculous.com</title>", f"<title>{year} Year Lists - Fimoculous.com</title>"),
         "<body>",
-        '<div style="max-width:900px;margin:0 auto;padding:10px;">',
-        '<h1 style="margin-bottom:6px;">LISTS: {}</h1>'.format(year),
-        '<p><em>This page aggregates all of the lists related to {}.</em></p>'.format(year),
-        '<div class="sortnav">Sort: <a href="?">category</a> | <a href="?source">source</a> | <a href="?chron">date</a></div>',
+        '<div id="cell">',
+        '<a name="top" href="/#top"><div id="transparent"></div></a>',
+        '<div id="whitespace">&nbsp;</div>',
+        '<div id="content">',
+        '<div id="logo"><a href="/"><img src="/images/logo-fimoc.png" width="340" height="78" alt="Fimoculous.com"></a></div>',
+        '<div class="bodybox" style="height:99.99%">',
+        '<div class="header"><div class="title" style="margin-bottom: 10px;">LISTS: {}</div></div>'.format(year),
+        '<div class="bodytext">',
+        f'<div class="intro"><em>This page aggregates all of the lists related to {year}.</em></div>',
+        '<div class="sortnav" style="margin:10px 0;padding:8px 0;border-top:1px dotted #ccc;border-bottom:1px dotted #ccc;">Sort: <a href="?">category</a> | <a href="?source">source</a> | <a href="?chron">date</a></div>',
         '<div id="mode-cat" class="mode">',
         "\n".join(category_blocks),
         "</div>",
@@ -265,13 +297,29 @@ def render_year_review_page(entries: List[dict], year: int, nav_years: List[int]
         "</div>",
         '<hr style="border: 1px dotted #CCCCCC;width:100%;" />',
         f"<p><strong>PREVIOUS YEARS</strong>: {' | '.join(nav_links)}</p>",
-        "</div>",
+        "</div>",  # bodytext
+        "<br /><br />",
+        "</div>",  # bodybox
+        "</div>",  # content
+        FOOTER_HTML,
+        "</div>",  # cell
         "<script>",
         "const params=new URLSearchParams(location.search);",
         "const mode=params.has('chron')?'chron':(params.has('source')?'source':'cat');",
         "document.getElementById('mode-'+mode).style.display='block';",
         "const cat=params.get('cat');",
         "if(cat){const el=document.getElementsByName(cat.toLowerCase())[0]; if(el){el.scrollIntoView();}}",
+        "</script>",
+        "<script type=\"text/javascript\">",
+        "var _sf_async_config={uid:2823,domain:\"fimoculous.com\"};",
+        "(function(){function loadChartbeat(){window._sf_endpt=(new Date()).getTime();var e=document.createElement('script');e.setAttribute('language','javascript');e.setAttribute('type','text/javascript');e.setAttribute('src',(('https:'==document.location.protocol)?'https://s3.amazonaws.com/':'http://')+'static.chartbeat.com/js/chartbeat.js');document.body.appendChild(e);}var oldonload=window.onload;window.onload=(typeof window.onload!='function')?loadChartbeat:function(){oldonload();loadChartbeat();};})();",
+        "</script>",
+        "<script type=\"text/javascript\">",
+        "var gaJsHost=((\"https:\"==document.location.protocol)?\"https://ssl.\":\"http://\");",
+        "document.write(unescape(\"%3Cscript src='\"+gaJsHost+\"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E\"));",
+        "</script>",
+        "<script type=\"text/javascript\">",
+        "try {var pageTracker=_gat._getTracker(\"UA-12347764-1\");pageTracker._trackPageview();} catch(err) {}",
         "</script>",
         "</body>",
         "</html>",
