@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import html
 import pathlib
 from datetime import datetime
 from typing import Dict, List, Tuple
@@ -26,6 +27,45 @@ YEAR_REVIEW_PAGES = [
     "year-review-2008.cfm",
     "year-review-2009.cfm",
     "year-review-2010.cfm",
+]
+END_OF_YEAR_CATEGORY_ORDER = [
+    "advertising",
+    "architecture",
+    "art",
+    "automobiles",
+    "books",
+    "business",
+    "comedy",
+    "comics",
+    "dance",
+    "design",
+    "dvd",
+    "fashion",
+    "education",
+    "film",
+    "food",
+    "gadgets",
+    "games",
+    "ideas",
+    "media",
+    "miscellaneous",
+    "music",
+    "online",
+    "paranormal",
+    "people",
+    "photos",
+    "politics",
+    "religion",
+    "sports",
+    "science",
+    "sex",
+    "tech",
+    "theater",
+    "toys",
+    "travel",
+    "tv",
+    "musicvideos",
+    "words",
 ]
 
 
@@ -90,6 +130,145 @@ def load_comments() -> Dict[str, List[dict]]:
     for rows in comments.values():
         rows.sort(key=lambda c: c["sort"])
     return comments
+
+
+def parse_end_of_year_date(raw: str) -> datetime | None:
+    raw = (raw or "").strip()
+    if not raw:
+        return None
+    for fmt in ("%m/%d/%y %H:%M:%S", "%m/%d/%Y %H:%M:%S", "%m/%d/%y", "%m/%d/%Y"):
+        try:
+            return datetime.strptime(raw, fmt)
+        except ValueError:
+            continue
+    return None
+
+
+def load_end_of_year_entries(year: int) -> List[dict]:
+    """Load end-of-year list entries for a given year."""
+    entries: List[dict] = []
+    start = datetime(year, 9, 1)
+    end = datetime(year + 1, 4, 1)
+    with (DB_DIR / "tblEndOfYear.csv").open(newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            dt = parse_end_of_year_date(row.get("mydate") or "")
+            if not dt or not (start <= dt < end):
+                continue
+            category = (row.get("category") or "").strip()
+            if not category:
+                continue
+            entries.append(
+                {
+                    "category": category,
+                    "source": (row.get("source") or "").strip(),
+                    "listname": (row.get("listname") or "").strip(),
+                    "link": (row.get("link") or "").strip(),
+                    "date": dt,
+                }
+            )
+    return entries
+
+
+def render_year_review_page(entries: List[dict], year: int) -> str:
+    """Render a static year-in-review page (categories + sorts)."""
+    # Group by category
+    grouped: Dict[str, List[dict]] = {c: [] for c in END_OF_YEAR_CATEGORY_ORDER}
+    for entry in entries:
+        key = entry["category"].lower()
+        grouped.setdefault(key, []).append(entry)
+    for rows in grouped.values():
+        rows.sort(key=lambda e: e["date"], reverse=True)
+
+    chron_sorted = sorted(entries, key=lambda e: e["date"], reverse=True)
+    source_sorted = sorted(entries, key=lambda e: (e["source"].lower(), e["listname"].lower()))
+
+    def render_rows(rows: List[dict]) -> str:
+        parts: List[str] = []
+        for e in rows:
+            date_str = e["date"].strftime("%m/%d/%y")
+            parts.append(
+                f'<div class="catrowsshrt"><div class="list"><a href="{html.escape(e["link"])}"><strong>{html.escape(e["listname"])}</strong></a></div>'
+                f'<div class="source">{html.escape(e["source"])}</div>'
+                f'<div class="datelist">{date_str}</div></div>'
+            )
+        return "\n".join(parts)
+
+    category_blocks: List[str] = []
+    for cat in END_OF_YEAR_CATEGORY_ORDER:
+        rows = grouped.get(cat, [])
+        if not rows:
+            continue
+        anchor = html.escape(cat)
+        display_cat = "musicvideos" if cat == "musicvideos" else cat
+        category_blocks.append(
+            "\n".join(
+                [
+                    f'<a name="{anchor}"></a>',
+                    '<hr style="border: 1px dotted #CCCCCC;width:100%;" />',
+                    f'<div class="categorylong">{html.escape(display_cat)}</div>',
+                    f'<div class="totallists">{len(rows)} lists</div>',
+                    render_rows(rows),
+                    "<br clear=\"all\" />",
+                ]
+            )
+        )
+
+    chron_block = render_rows(chron_sorted)
+    source_block = render_rows(source_sorted)
+
+    # Simple JS toggles sections to mimic ?chron and ?source behavior
+    html_parts = [
+        '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">',
+        "<html>",
+        "<head>",
+        f"<title>{year} Year Lists - Fimoculous.com</title>",
+        '<link rel="stylesheet" type="text/css" href="/styles/fimostyles_ideal.css">',
+        "<style>",
+        ".mode{display:none;} .catrowsshrt{margin:4px 0;}",
+        ".list{float:left;width:60%;}",
+        ".source{float:left;width:25%;}",
+        ".datelist{float:left;width:15%;text-align:right;}",
+        ".sortnav{margin:10px 0;padding:8px 0;border-top:1px dotted #ccc;border-bottom:1px dotted #ccc;}",
+        "</style>",
+        "</head>",
+        "<body>",
+        '<div style="max-width:900px;margin:0 auto;padding:10px;">',
+        '<h1 style="margin-bottom:6px;">LISTS: {}</h1>'.format(year),
+        '<p><em>This page aggregates all of the lists related to {}.</em></p>'.format(year),
+        '<div class="sortnav">Sort: <a href="?">category</a> | <a href="?source">source</a> | <a href="?chron">date</a></div>',
+        '<div id="mode-cat" class="mode">',
+        "\n".join(category_blocks),
+        "</div>",
+        '<div id="mode-source" class="mode">',
+        f"<div class=\"totallists\">{len(source_sorted)} lists</div>",
+        source_block,
+        "</div>",
+        '<div id="mode-chron" class="mode">',
+        f"<div class=\"totallists\">{len(chron_sorted)} lists</div>",
+        chron_block,
+        "</div>",
+        '<hr style="border: 1px dotted #CCCCCC;width:100%;" />',
+        '<p><strong>PREVIOUS YEARS</strong>: '
+        '<a href="/year-review-2009.cfm">2009</a> | '
+        '<a href="/year-review-2008.cfm">2008</a> | '
+        '<a href="/year-review-2007.cfm">2007</a> | '
+        '<a href="/year-review-2006.cfm">2006</a> | '
+        '<a href="/year-review-2005.cfm">2005</a> | '
+        '<a href="/year-review-2004.cfm">2004</a> | '
+        '<a href="/year-review-2003.cfm">2003</a> | '
+        '<a href="/year-review.cfm">2001</a></p>',
+        "</div>",
+        "<script>",
+        "const params=new URLSearchParams(location.search);",
+        "const mode=params.has('chron')?'chron':(params.has('source')?'source':'cat');",
+        "document.getElementById('mode-'+mode).style.display='block';",
+        "const cat=params.get('cat');",
+        "if(cat){const el=document.getElementsByName(cat.toLowerCase())[0]; if(el){el.scrollIntoView();}}",
+        "</script>",
+        "</body>",
+        "</html>",
+    ]
+    return "\n".join(html_parts)
 
 
 def build():
@@ -253,6 +432,8 @@ def build():
 
     # Legacy year-in-review pages (ship as-is)
     for filename in YEAR_REVIEW_PAGES:
+        if filename == "year-review-2010.cfm":
+            continue  # we generate a static replacement below
         src = ROOT / filename
         if not src.exists():
             print(f"Skipping missing legacy file: {filename}")
@@ -261,6 +442,16 @@ def build():
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_bytes(src.read_bytes())
         sitemap_urls.append((f"{BASE_URL}/{filename}", ""))
+
+    # Static rebuild of 2010 year-in-review (removes ColdFusion dependency)
+    entries_2010 = load_end_of_year_entries(2010)
+    if entries_2010:
+        rendered_2010 = render_year_review_page(entries_2010, 2010)
+        out_2010 = OUT_DIR / "year-review-2010.cfm"
+        out_2010.write_text(rendered_2010, encoding="utf-8")
+        sitemap_urls.append((f"{BASE_URL}/year-review-2010.cfm", ""))
+    else:
+        print("Warning: no end-of-year data found for 2010; page not generated.")
 
     # Sitemap (homepage + posts + categories)
     sitemap_lines = [
