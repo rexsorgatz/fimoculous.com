@@ -28,6 +28,15 @@ YEAR_REVIEW_PAGES = [
     "year-review-2009.cfm",
     "year-review-2010.cfm",
 ]
+YEAR_REVIEW_WINDOWS = {
+    2010: ("9/1/2010", "4/1/2011"),
+    2009: ("9/1/2009", "4/1/2010"),
+    2008: ("9/1/2008", "4/1/2009"),
+    2007: ("5/1/2007", "5/1/2008"),
+    2006: ("6/1/2006", "6/1/2007"),
+    2005: ("6/1/2005", "6/1/2006"),
+    2004: ("1/1/2004", "1/1/2005"),
+}
 END_OF_YEAR_CATEGORY_ORDER = [
     "advertising",
     "architecture",
@@ -144,11 +153,9 @@ def parse_end_of_year_date(raw: str) -> datetime | None:
     return None
 
 
-def load_end_of_year_entries(year: int) -> List[dict]:
-    """Load end-of-year list entries for a given year."""
+def load_end_of_year_entries(start: datetime, end: datetime) -> List[dict]:
+    """Load end-of-year list entries within a window."""
     entries: List[dict] = []
-    start = datetime(year, 9, 1)
-    end = datetime(year + 1, 4, 1)
     with (DB_DIR / "tblEndOfYear.csv").open(newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
             dt = parse_end_of_year_date(row.get("mydate") or "")
@@ -169,7 +176,7 @@ def load_end_of_year_entries(year: int) -> List[dict]:
     return entries
 
 
-def render_year_review_page(entries: List[dict], year: int) -> str:
+def render_year_review_page(entries: List[dict], year: int, nav_years: List[int]) -> str:
     """Render a static year-in-review page (categories + sorts)."""
     # Group by category
     grouped: Dict[str, List[dict]] = {c: [] for c in END_OF_YEAR_CATEGORY_ORDER}
@@ -217,6 +224,15 @@ def render_year_review_page(entries: List[dict], year: int) -> str:
     source_block = render_rows(source_sorted)
 
     # Simple JS toggles sections to mimic ?chron and ?source behavior
+    nav_links: List[str] = []
+    for y in nav_years:
+        if y == 2001:
+            nav_links.append('<a href="/year-review.cfm">2001</a>')
+        elif y == year:
+            nav_links.append(str(y))
+        else:
+            nav_links.append(f'<a href="/year-review-{y}.cfm">{y}</a>')
+
     html_parts = [
         '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">',
         "<html>",
@@ -248,15 +264,7 @@ def render_year_review_page(entries: List[dict], year: int) -> str:
         chron_block,
         "</div>",
         '<hr style="border: 1px dotted #CCCCCC;width:100%;" />',
-        '<p><strong>PREVIOUS YEARS</strong>: '
-        '<a href="/year-review-2009.cfm">2009</a> | '
-        '<a href="/year-review-2008.cfm">2008</a> | '
-        '<a href="/year-review-2007.cfm">2007</a> | '
-        '<a href="/year-review-2006.cfm">2006</a> | '
-        '<a href="/year-review-2005.cfm">2005</a> | '
-        '<a href="/year-review-2004.cfm">2004</a> | '
-        '<a href="/year-review-2003.cfm">2003</a> | '
-        '<a href="/year-review.cfm">2001</a></p>',
+        f"<p><strong>PREVIOUS YEARS</strong>: {' | '.join(nav_links)}</p>",
         "</div>",
         "<script>",
         "const params=new URLSearchParams(location.search);",
@@ -432,8 +440,8 @@ def build():
 
     # Legacy year-in-review pages (ship as-is)
     for filename in YEAR_REVIEW_PAGES:
-        if filename == "year-review-2010.cfm":
-            continue  # we generate a static replacement below
+        if any(filename.endswith(f"{year}.cfm") for year in YEAR_REVIEW_WINDOWS):
+            continue  # generated below
         src = ROOT / filename
         if not src.exists():
             print(f"Skipping missing legacy file: {filename}")
@@ -443,15 +451,19 @@ def build():
         dest.write_bytes(src.read_bytes())
         sitemap_urls.append((f"{BASE_URL}/{filename}", ""))
 
-    # Static rebuild of 2010 year-in-review (removes ColdFusion dependency)
-    entries_2010 = load_end_of_year_entries(2010)
-    if entries_2010:
-        rendered_2010 = render_year_review_page(entries_2010, 2010)
-        out_2010 = OUT_DIR / "year-review-2010.cfm"
-        out_2010.write_text(rendered_2010, encoding="utf-8")
-        sitemap_urls.append((f"{BASE_URL}/year-review-2010.cfm", ""))
-    else:
-        print("Warning: no end-of-year data found for 2010; page not generated.")
+    # Static rebuilds of year-in-review pages that previously required CF
+    nav_years = sorted(set(YEAR_REVIEW_WINDOWS.keys()) | {2003, 2001}, reverse=True)
+    for year, (start_str, end_str) in YEAR_REVIEW_WINDOWS.items():
+        start = datetime.strptime(start_str, "%m/%d/%Y")
+        end = datetime.strptime(end_str, "%m/%d/%Y")
+        entries = load_end_of_year_entries(start, end)
+        if not entries:
+            print(f"Warning: no end-of-year data found for {year}; page not generated.")
+            continue
+        rendered_page = render_year_review_page(entries, year, nav_years)
+        out_path = OUT_DIR / f"year-review-{year}.cfm"
+        out_path.write_text(rendered_page, encoding="utf-8")
+        sitemap_urls.append((f"{BASE_URL}/year-review-{year}.cfm", ""))
 
     # Sitemap (homepage + posts + categories)
     sitemap_lines = [
